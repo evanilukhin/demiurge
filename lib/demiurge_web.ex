@@ -40,6 +40,8 @@ defmodule DemiurgeWeb do
       import DemiurgeWeb.Router.Helpers
       import DemiurgeWeb.ErrorHelpers
       import DemiurgeWeb.Gettext
+
+      import ReactPhoenix.ClientSide
     end
   end
 

@@ -12,7 +12,11 @@
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
-
+import "react-phoenix"
+import MyComponent from "./my_component"
+window.Components = {
+  MyComponent
+}
 // Import local files
 //
 // Local files can be imported directly using relative
