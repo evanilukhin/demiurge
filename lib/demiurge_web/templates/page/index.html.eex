@@ -1,1 +1,1 @@
-<%= react_component("Components.MyComponent", %{rendering_type: "ananas"}) %>
+<div id="root"></div>

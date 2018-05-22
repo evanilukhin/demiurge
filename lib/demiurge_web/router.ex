@@ -19,6 +19,13 @@ defmodule DemiurgeWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/api", DemiurgeWeb do
+    pipe_through :api
+    scope "/v1" do
+      get "/about", AboutController, :index
+    end
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", DemiurgeWeb do
   #   pipe_through :api

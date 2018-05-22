@@ -11,12 +11,12 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-import "phoenix_html"
-import "react-phoenix"
+import React                    from 'react';
+import ReactDOM                 from 'react-dom';
 import MyComponent from "./my_component"
-window.Components = {
-  MyComponent
-}
+import About from "./about"
+// ReactDOM.render(<MyComponent />, document.getElementById('root'));
+ReactDOM.render(<About />, document.getElementById('root'));
 // Import local files
 //
 // Local files can be imported directly using relative
