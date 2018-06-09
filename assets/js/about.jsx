@@ -18,9 +18,6 @@ class About extends React.Component {
                 page: result
               });
             },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
             (error) => {
               this.setState({
                 isLoaded: true,
@@ -37,10 +34,12 @@ class About extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>
-          <li><b>name:</b> {page.name}</li>
-          <li><b>soname:</b> {page.soname}</li>
-        </ul>
+        <div>
+          <Decription descriptions={page.descriptions}/>
+          <Contacts contacts={page.contacts}/>
+          <PersonalInfo personal_info={page.personal_info}/>
+          <Skills skills={page.skills}/>       
+        </div>
       );
     }
   }
