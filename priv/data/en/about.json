@@ -5,28 +5,27 @@
     "dob": "1995.02.21"
   },
   "description": {
-    "short": "Hello, My name is Ivan, and I'm software engineer. I love create veird stuffs. If you want to see more information about my bio. Click button below.",
-    "full": "Hello, My name is Ivan(but I prefer Welsh variant - Evan), and I'm software engineer. I love cook, read and create veird stuffs. Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.
-            Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.
-            Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.
-            Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.Abcdefghijklmnopqrstwxyz.
-            I have some exprience with creating and deploying intermediate software(Talend Open ESB)"
+    "short": "Hello, My name is Evan, and I'm software engineer. I love create veird stuffs. If you want to see more information about my bio. Click button below.",
+    "full": "Hello, My name is Evan, and I'm software engineer? from Russia. I love cook, read and create veird stuffs. I have some experience with creating and deploying intermediate ESB(Talend Open ESB)."
   },
   "contacts": [
     {
       "type": "github",
-      "value": "github.com/evanilukhin"
+      "link": "https://github.com/evanilukhin"
     },
     {
-      "type": "email",
-      "value": "evanilukhin@gmail.com"
+      "type": "mail",
+      "link": "mailto:evanilukhin@gmail.com"
     }
   ],
-  "education" : [
-      {
-          
-      }
-    ],
+
+  "education" : {
+    "first": {
+      "name": "National Research University of Electronic Technology - MIET",
+      "degree": "A Bachelor of Software Engineering",
+      "years": "2012 - 2016"
+    }
+  },
 
   "skills":  {
       "programming_languages": [
@@ -54,17 +53,17 @@
           "name": "React",
           "level": "2",
           "comment": "this site is my first project on REACT"
-        },
+        }
       ],
-      "human languages": [
+      "human_languages": [
         {
           "name" : "Russian",
-          "level": "native"
+          "level": "intermediate"
         },
         {
           "name" : "English",
           "level" : "elementary"
         }
       ]
-    },
+    }
 }
