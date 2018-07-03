@@ -16,7 +16,7 @@ export default class About extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://0.0.0.0:4000/api/v1/about?lang=en")
+    fetch("./api/v1/about?lang=en")
           .then(res => res.json())
           .then(
             (result) => {

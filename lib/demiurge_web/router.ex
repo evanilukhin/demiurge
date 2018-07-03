@@ -13,21 +13,15 @@ defmodule DemiurgeWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api/v1", DemiurgeWeb do
+    pipe_through :api
+    
+    get "/about", AboutController, :index
+  end
+
   scope "/", DemiurgeWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/*path", PageController, :index
   end
-
-  scope "/api", DemiurgeWeb do
-    pipe_through :api
-    scope "/v1" do
-      get "/about", AboutController, :index
-    end
-  end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", DemiurgeWeb do
-  #   pipe_through :api
-  # end
 end

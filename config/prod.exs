@@ -67,8 +67,8 @@ config :demiurge, DemiurgeWeb.Endpoint,
 # Configure your database
 config :demiurge, Demiurge.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("DEMIURGE_PG_USER"),
-  password: System.get_env("DEMIURGE_PG_PASS"),
-  database: System.get_env("DEMIURGE_PG_DATABASE"),
-  hostname: System.get_env("DEMIURGE_PG_HOST"),
+  username: System.get_env("PG_USER"),
+  password: System.get_env("PG_PASS"),
+  database: System.get_env("PG_DATABASE"),
+  hostname: System.get_env("PG_HOST"),
   pool_size: 15

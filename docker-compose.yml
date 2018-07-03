@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    image: evanilukhin/demiurge
+    environment:
+      # Variables to connect to our Postgres server
+      PG_USER: postgres
+      PG_PASS: postgres
+      PG_DATABASE: demiurge
+      PG_HOST: db
+      PG_PORT: 5432
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+  db:
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    restart: always
+    volumes:
+      - /tmp/postgresql/data:/var/lib/postgresql/data
