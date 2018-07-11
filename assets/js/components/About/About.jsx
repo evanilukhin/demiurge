@@ -1,9 +1,13 @@
 import React from "react"
-import Description from './About/Description'
-import PersonalInfo from './About/PersonalInfo'
-import Education from './About/Education'
-import Skills from './About/Skills'
-import Contacts from './Contacts'
+
+import Contacts from 'Components/Contacts/Contacts'
+
+import Description from './Description/Description'
+import PersonalInfo from './PersonalInfo/PersonalInfo'
+import Education from './Education/Education'
+import Skills from './Skills/Skills'
+
+import style from './About.less'
 
 export default class About extends React.Component {
   constructor(props) {
@@ -42,7 +46,7 @@ export default class About extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div>
+        <div className={style.header}>
           <Description description={page.description}/>
           <PersonalInfo personalInfo={page.personal_info}/>
           <Education education={page.education}/>

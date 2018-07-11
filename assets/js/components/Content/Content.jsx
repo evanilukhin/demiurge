@@ -5,8 +5,8 @@ import {
   Switch
 } from 'react-router-dom'
 
-import Blog from './Blog'
-import About from './About'
+import Blog from 'Components/Blog/Blog'
+import About from 'Components/About/About'
 
 export default function Content(){
   return(

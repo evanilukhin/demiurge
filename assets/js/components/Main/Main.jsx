@@ -1,7 +1,7 @@
 import React from "react"
 
-import Navbar from './Navbar'
-import Content from './Content'
+import Navbar from 'Components/Navbar/Navbar'
+import Content from 'Components/Content/Content'
 
 export default function Main() {
   return(

@@ -11,16 +11,11 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-import React                from 'react'
-import {render}                 from 'react-dom'
-import {BrowserRouter}            from 'react-router-dom'
-import Main                     from './Main'
+import React                      from 'react'
+import {render}                   from 'react-dom'
+import App                        from './App/App'
 
-render((
-  <BrowserRouter>
-    <Main />
-  </BrowserRouter>),
-document.getElementById('root'));
+render((<App />), document.getElementById('root'));
 // Import local files
 //
 // Local files can be imported directly using relative
