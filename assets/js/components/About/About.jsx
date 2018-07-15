@@ -46,7 +46,7 @@ export default class About extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div className={style.header}>
+        <div className={style.content}>
           <Description description={page.description}/>
           <PersonalInfo personalInfo={page.personal_info}/>
           <Education education={page.education}/>

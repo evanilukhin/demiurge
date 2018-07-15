@@ -13,7 +13,7 @@ export default class Description extends React.Component {
   render() {
     return(
       <div>
-        <div>{this.state.full ? this.props.description.short : this.props.description.full}</div>
+        <div>{this.state.full ? this.props.description.full : this.props.description.short}</div>
         <button onClick={this.changeFull.bind(this)}>
           {this.state.full ? "See More" : "Collapse"}
         </button>
