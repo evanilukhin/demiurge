@@ -1,25 +1,39 @@
 @import "~common_css/app.less";
 
+@background_color: rgba(82, 189, 86, 0.95);
+@font_color: rgba(255, 255, 255, 0.81);
+@font_shadow_color: rgba(12, 12, 12, 0.64);
+
 .nav {
   position: sticky;
   overflow: hidden;
   top: 0;
   width: 100%;
-  padding: 0;
-  background-color: @col1;
+  background-color: @background_color;
 }
 
-.link, .link:focus{
+.nav_content {
+  width: 65%;
+  margin: auto;
+}
+
+.link, .link:focus {
   float: left;
-  color: #144571;
+  color: @font_color;
+  text-shadow: 1px 1px 4px @font_shadow_color;
   text-align: center;
-  padding: 8px 10px;
+  padding: 10px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 19px;
 }
 
-.link:visited, .link:hover {
-  background-color: @back;
-  color: black;
+.link:hover {
+  color: @font_color;
+  background-color: rgba(0, 78, 255, 0.26);
+  text-shadow: 3px 3px 4px @font_shadow_color;
   text-decoration: none;
+}
+
+.active_link {
+  background-color: @back;
 }

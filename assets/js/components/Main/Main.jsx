@@ -9,8 +9,7 @@ export default function Main() {
   return(
     <div>
       <Navbar />
-      <hr/>
-      <Content />      
+      <Content />
     </div>
   );
 }
