@@ -1,0 +1,15 @@
+@import "~common_css/buttons.less";
+
+.button {
+  .button(@bcolor: rgba(82, 189, 86, 0.95));
+}
+
+.description {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 350px) {
+  .button {
+    .button(@bcolor: rgba(82, 189, 86, 0.95), @width: 100%);
+  }
+}

@@ -7,11 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Evan Ilukhin</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
-  <body>
-    <div id="root"></div>
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-  </body>  
+  <body id="root" />
+  <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
 </html>

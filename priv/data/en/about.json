@@ -1,13 +1,9 @@
 {
-  "personal_info": {
-    "name": "Ivan",
-    "soname": "Ilyukhin",
-    "dob": "1995.02.21"
-  },
   "description": {
-    "short": "Hello, My name is Evan and I'm software engineer. I love create veird stuffs. If you want to see more information about my bio. Click button below.",
-    "full": "Hello, My name is Evan and I'm software engineer from Russia. I love cook, read and create veird stuffs. I have some experience with creating and deploying intermediate ESB(Talend Open ESB)."
+    "short": "Hello, My name is Ivan and I'm a software engineer. I love create weird stuff. If you want to see more information about my bio. Click button below.",
+    "full": "Hello, My name is Ivan and I'm a software engineer from Russia. I love to cook, read and create weird stuff. There are my bio and the information about my hobbies, interests and skills. I'll fill this data something later. This text going to be sufficiently big, so I'll move it to another file."
   },
+
   "contacts": [
     {
       "type": "github",
@@ -31,15 +27,22 @@
     }
   ],
 
-  "education" : {
-    "first": {
-      "name": "National Research University of Electronic Technology - MIET",
-      "degree": "A Bachelor of Software Engineering",
-      "years": "2012 - 2016"
-    }
-  },
+  "resume" : {
+    "personal_info": {
+      "name": "Ivan",
+      "soname": "Ilyukhin",
+      "dob": "1995.02.21"
+    },
 
-  "skills":  {
+    "education" : {
+      "first": {
+        "name": "National Research University of Electronic Technology - MIET",
+        "degree": "A Bachelor of Software Engineering",
+        "years": "2012 - 2016"
+      }
+    },
+
+    "skills":  {
       "programming_languages": [
         {
           "name": "Elixir",
@@ -78,4 +81,5 @@
         }
       ]
     }
+  }
 }
