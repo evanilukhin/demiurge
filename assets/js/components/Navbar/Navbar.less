@@ -11,11 +11,14 @@
   width: 100%;
   background-color: @background_color;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.77);
+
 }
 
 .nav_content {
   width: 65%;
   margin: auto;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .link {
@@ -38,8 +41,23 @@
   background-color: @back;
 }
 
-@media screen and (max-width: 600px) {
+// @media screen and (max-width: 600px) {
+//   .nav_content {
+//     width: 100%;
+//   }
+// }
+
+@media all and (max-width: 800px) {
   .nav_content {
     width: 100%;
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .nav_content {
+    width: 100%;
+    flex-flow: column wrap;
+    padding: 0;
   }
 }

@@ -43,9 +43,9 @@ export default class Main extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div className={style.main}>
-          <Navbar />
+        <div className={style.main}>          
           <div className={style.content}>
+            <Navbar />
             <Content aboutMe={aboutMe}/>
           </div>
           <Footer contacts={aboutMe.contacts}/>
