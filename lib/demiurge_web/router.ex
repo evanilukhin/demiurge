@@ -13,11 +13,18 @@ defmodule DemiurgeWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api/v1", DemiurgeWeb do
+  scope "/api" do
     pipe_through :api
-    
-    get "/about", AboutController, :index
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: DemiurgeWeb.Schema
+
+    scope "/v1", DemiurgeWeb do
+      get "/about", AboutController, :index
+    end
   end
+
+
 
   scope "/", DemiurgeWeb do
     pipe_through :browser # Use the default browser stack
