@@ -1,12 +1,17 @@
 import React from "react"
-import {BrowserRouter} from 'react-router-dom'
+import { ApolloProvider } from "react-apollo";
+import { BrowserRouter } from 'react-router-dom'
+import ApolloClient from "apollo-boost";
 
 import Main from 'Components/Main/Main'
 
 export default function App() {
+  const client = new ApolloClient({uri: "/api/graphiql"});
   return(
-    <BrowserRouter>
-      <Main />
-    </BrowserRouter>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <Main />
+      </BrowserRouter>
+    </ApolloProvider>
   );
 }

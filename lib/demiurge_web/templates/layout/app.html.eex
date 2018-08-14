@@ -9,6 +9,8 @@
     <title>Evan Ilukhin</title>
   </head>
 
-  <body id="root" />
-  <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  <body>
+    <div id="root">
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
 </html>
