@@ -9,6 +9,11 @@ defmodule DemiurgeWeb.Schema do
     field :posts, list_of(:post) do
       resolve &Resolvers.Content.list_posts/3
     end
+
+    @desc "Get about"
+    field :about, type: :about do
+      resolve &Resolvers.Content.about/3
+    end
   end
 
   mutation do

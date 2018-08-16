@@ -1,9 +1,5 @@
 {
-  "description": {
-    "short": "Hello, My name is Ivan and I'm a software engineer. I love create weird stuff. If you want to see more information about my bio. Click button below.",
-    "full": "Hello, My name is Ivan and I'm a software engineer from Russia. I love to cook, read and create weird stuff. There are my bio and the information about my hobbies, interests and skills. I'll fill this data something later. This text going to be sufficiently big, so I'll move it to another file."
-  },
-
+  "description": "Developer with 3 years of production experience. Very love to write (and especially read) human readable, structured code and work with microservices.  Have a background in application integration using  REST API, DB, Talend OpenESB, Apache Kafka.  Interest developing high-loaded microservices(on Elixir/Erlang, Go), a modern web-development (RoR, Elixir Phoenix, React, Less) and also mediating communication among applications with message brokers or integration frameworks. ",
   "contacts": [
     {
       "type": "github",
@@ -35,11 +31,9 @@
     },
 
     "education" : {
-      "first": {
-        "name": "National Research University of Electronic Technology - MIET",
-        "degree": "A Bachelor of Software Engineering",
-        "years": "2012 - 2016"
-      }
+      "name": "National Research University of Electronic Technology - MIET",
+      "degree": "A Bachelor of Software Engineering",
+      "years": "2012 - 2016"
     },
 
     "skills":  {
@@ -52,17 +46,17 @@
         {
           "name": "Erlang",
           "level": "4",
-          "comment": "know how write simple microservices"
+          "comment": "know how to develop simple microservices"
         },
         {
           "name": "Go",
           "level": "4",
-          "comment": "know how write simple microservices"
+          "comment": "know how to develop simple microservices"
         },
         {
           "name": "Ruby",
           "level": "7",
-          "comment": "3 years in production, 1 microservice, know how it  work inside"
+          "comment": "3 years in production, 1 microservice, know how it works inside"
         },
         {
           "name": "React",

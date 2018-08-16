@@ -8,14 +8,14 @@ export default class Education extends React.Component {
         <div>
           <div>
             <b>Name:</b>
-            <p>{this.props.education.first.name}</p>
+            <p>{this.props.education.name}</p>
           </div>
           <div>
             <b>Degree:</b>
-            <p>{this.props.education.first.degree}</p>
+            <p>{this.props.education.degree}</p>
           </div>
           <div>
-            <p>{this.props.education.first.years}</p>
+            <p>{this.props.education.years}</p>
           </div>
         </div>
       </div>

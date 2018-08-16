@@ -1,4 +1,7 @@
 import React from "react"
+import ReactLoading from "react-loading";
+import gql from "graphql-tag";
+import { Query } from "react-apollo";
 
 import Navbar from 'Components/Navbar/Navbar'
 import Content from 'Components/Content/Content'
@@ -6,51 +9,36 @@ import Footer from 'Components/Footer/Footer'
 
 import style from './Main.less'
 
-export default class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      aboutMe: {}
-    };
-  }
-
-  componentDidMount() {
-    fetch("./api/v1/about?lang=en")
-          .then(res => res.json())
-          .then(
-            (result) => {
-              this.setState({
-                isLoaded: true,
-                aboutMe: result
-              });
-            },
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
-            }
-          )
-  }
-
-  render() {
-    const { error, isLoaded, aboutMe } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
-      return (
-        <div className={style.main}>          
-          <div className={style.content}>
-            <Navbar />
-            <Content aboutMe={aboutMe}/>
-          </div>
-          <Footer contacts={aboutMe.contacts}/>
-        </div>
-      );
+const GET_ABOUT = gql`
+  {
+    about {
+      baseInformation
+      extendedBio
     }
   }
+`;
+
+export default class Main extends React.Component {
+  render() {
+    return(
+      <Query query={GET_ABOUT}>
+        {({ loading, error, data }) => {
+          if (loading) return <ReactLoading type="bubbles" color="#111" />;
+          if (error) return `Error! ${error.message}`;
+          const about = {
+            base: JSON.parse(data.about.baseInformation),
+            extended: data.about.extendedBio
+          }
+          return(
+            <div className={style.main}>
+              <div className={style.content}>
+                <Navbar />
+                <Content aboutMe={about}/>
+              </div>
+              <Footer contacts={about.base.contacts}/>
+            </div>
+          );
+        }}
+      </Query>
+  )};
 }

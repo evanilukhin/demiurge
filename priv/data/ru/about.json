@@ -1,8 +1,0 @@
-{
-  "name": "Иван",
-  "soname": "Илюхин",
-  "dob": "1995.02.21",
-  "github": "github.com/evanilukhin",
-  "skills": ["Elixir", "Erlang", "Go", "Ruby", "React"],
-  "interests": ["ESB", "Data Analyze", "Creating Veird Things"]
-}
