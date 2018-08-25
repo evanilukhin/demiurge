@@ -26,8 +26,10 @@
   "resume" : {
     "personal_info": {
       "name": "Ivan",
-      "soname": "Ilyukhin",
-      "dob": "1995.02.21"
+      "soname": "Iliukhin",
+      "dob": "1995.02.21",
+      "citizenship": "Russia",
+      "current_location": "Zelenograd, Moscow, Russia"
     },
 
     "education" : {
@@ -36,44 +38,27 @@
       "years": "2012 - 2016"
     },
 
-    "skills":  {
-      "programming_languages": [
-        {
-          "name": "Elixir",
-          "level": "5",
-          "comment": "have two projects(this resume too)"
-        },
-        {
-          "name": "Erlang",
-          "level": "4",
-          "comment": "know how to develop simple microservices"
-        },
-        {
-          "name": "Go",
-          "level": "4",
-          "comment": "know how to develop simple microservices"
-        },
-        {
-          "name": "Ruby",
-          "level": "7",
-          "comment": "3 years in production, 1 microservice, know how it works inside"
-        },
-        {
-          "name": "React",
-          "level": "2",
-          "comment": "this site is my first project on REACT"
-        }
-      ],
-      "human_languages": [
-        {
-          "name" : "Russian",
-          "level": "intermediate"
-        },
-        {
-          "name" : "English",
-          "level" : "elementary"
-        }
-      ]
-    }
+    "skills": [
+      {
+        "category": "Have working experience, and know about",
+        "text": "Ruby/RoR, Elixir/Phoenix, SQL(mostly PostgreSQL), CSS(including SASS and LESS), Talend OpenESB, Apache Kafka, Docker, Apache Karaf, REST, GraphQL, SOA)"
+      },
+      {
+        "category": "Have working experience, but it's not my strong suit",
+        "text": "Java, Go, Erlang, JS, ReactJS, Webpack, Zabbix"
+      },
+      {
+        "category": "Have only the theoretical knowledge",
+        "text": "ElasticSearch, Redis, Logstash, Nagios, NoSQL databases"
+      },
+      {
+        "category": "Other",
+        "text": "Have a background in using design patterns and antipatterns including EIP"
+      },
+      {
+        "category": "Languages",
+        "text": "Russian — native, English — intermediate/ready for interview"
+      }
+    ]
   }
 }

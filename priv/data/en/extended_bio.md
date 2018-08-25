@@ -1,7 +1,7 @@
 ## Intro
 
-Hello, I'm Ivan a software engineer from Mother Russia. There is the information about what I'am: a life path, hobbies and dreams
+Hello, I'm Ivan and I'm a software engineer. There is the information about what I'am: a life path, hobbies and thoughts.
 
 ## Path of programmer
 
-## Not working time
+## Free time
