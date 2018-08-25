@@ -1,7 +1,5 @@
 defmodule Demiurge.Post.Helpers do
   alias Demiurge.Post
-  alias Demiurge.Comment
-
   alias Demiurge.Repo
 
   import Ecto.Query

@@ -15,4 +15,8 @@ defmodule DemiurgeWeb.Resolvers.Content do
   def create_comment(_parent, args, _resolution) do
     Demiurge.Comment.Helpers.create_comment(args)
   end
+
+  def about(_parent, _args, _resolution) do
+    Demiurge.About.Helpers.get_about()
+  end
 end

@@ -11,8 +11,8 @@ export default class About extends React.Component {
     const aboutMe = this.props.aboutMe;
     return (
       <div className={style.content}>
-        <Description description={aboutMe.description}/>
-        <Resume resume={aboutMe.resume}/>
+        <Description about={aboutMe}/>
+        <Resume resume={aboutMe.base.resume}/>
       </div>
     );
   }

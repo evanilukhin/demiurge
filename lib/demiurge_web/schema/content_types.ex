@@ -25,4 +25,9 @@ defmodule DemiurgeWeb.Schema.ContentTypes do
     field :inserted_at, :string
     field :updated_at, :string
   end
+
+  object :about do
+    field :base_information, :string # json with master resume
+    field :extended_bio, :string # markdowned text with more complex information about me
+  end
 end

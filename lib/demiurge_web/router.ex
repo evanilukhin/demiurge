@@ -18,13 +18,7 @@ defmodule DemiurgeWeb.Router do
 
     forward "/graphiql", Absinthe.Plug.GraphiQL,
       schema: DemiurgeWeb.Schema
-
-    scope "/v1", DemiurgeWeb do
-      get "/about", AboutController, :index
-    end
   end
-
-
 
   scope "/", DemiurgeWeb do
     pipe_through :browser # Use the default browser stack

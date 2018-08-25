@@ -1,4 +1,5 @@
 import React from "react"
+import ReactMarkdown from 'react-markdown'
 
 import style from './Description.less'
 
@@ -13,9 +14,10 @@ export default class Description extends React.Component {
   }
 
   render() {
+    const about = this.props.about
     return(
       <div className={style.description}>
-        <div>{this.state.full ? this.props.description.full : this.props.description.short}</div>
+        { this.state.full ? <ReactMarkdown source={about.extended}/> : <div> {about.base.description} </div> }
         <button className={style.button} onClick={this.changeFull.bind(this)}>
           {this.state.full ? "Collapse" : "See More"}
         </button>
