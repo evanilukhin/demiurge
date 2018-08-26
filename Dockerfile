@@ -1,4 +1,4 @@
-FROM bitwalker/alpine-elixir-phoenix:latest
+FROM bitwalker/alpine-elixir-phoenix:1.7.1
 MAINTAINER Evan Ilukhin <evanilukhin@gmail.com>
 
 EXPOSE 5000
