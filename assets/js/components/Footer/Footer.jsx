@@ -11,7 +11,10 @@ export default function Footer({contacts}) {
       <div className={style.copyright_box}>
         <a href="https://github.com/evanilukhin/demiurge">Source code</a>
         <p>&copy; {(new Date().getFullYear())} Evan Ilukhin</p>
-      </div>
+        <a href=''>
+          <img className={style.ananas} border="0" src="images/ananas-256.png"/>
+        </a>
+      </div>      
     </footer>
   );
 }
