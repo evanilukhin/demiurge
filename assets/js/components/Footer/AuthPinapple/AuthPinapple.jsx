@@ -1,5 +1,7 @@
 import React from "react"
 import Modal from 'react-modal';
+import jsSHA from 'jssha'
+import {Cookies, withCookies} from "react-cookie";
 
 import style from './AuthPinapple.less'
 
@@ -14,12 +16,13 @@ const customStyles = {
   }
 };
 
-export default class AuthPinapple extends React.Component  {
-  constructor() {
-    super();
+class AuthPinapple extends React.Component {
+  constructor(props) {
+    super(props);
+    const { cookies } = props;
     this.state = {
       modalIsOpen: false,
-      admin_password: '123'
+      admin_password: ''
     };
     this.openModal = this.openModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -27,21 +30,29 @@ export default class AuthPinapple extends React.Component  {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  authentification() {
-    console.log('Auth')
+  authentification(encrypted_password) {
+    const { cookies } = this.props;
+    cookies.set("encrypted_password", encrypted_password, {path: "/"})
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    const { cookies } = this.props;
+    if (cookies.get("encrypted_password")) {
+      cookies.remove("encrypted_password");
+    } else {
+      this.setState({modalIsOpen: true});
+    }
   }
 
   handleChange(event) {
    this.setState({admin_password: event.target.value});
- }
+  }
 
   handleSubmit(event) {
-   alert('A password: ' + this.state.admin_password);
    event.preventDefault();
+   var shaObj = new jsSHA("SHA3-512", "TEXT");
+   shaObj.update(this.state.admin_password);
+   this.authentification(shaObj.getHash("HEX"))
    this.setState({modalIsOpen: false});
   }
 
@@ -50,7 +61,7 @@ export default class AuthPinapple extends React.Component  {
   }
 
   render() {
-    return(
+    return (
       <a onClick={this.openModal}>
         <img className={style.ananas} border="0" src="images/ananas-256.png"/>
         <Modal
@@ -70,3 +81,5 @@ export default class AuthPinapple extends React.Component  {
     );
   }
 }
+
+export default withCookies(AuthPinapple);

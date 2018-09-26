@@ -11,6 +11,7 @@ module.exports = (env, options) => ({
       new OptimizeCSSAssetsPlugin({})
     ]
   },
+  devtool: 'cheap-module-source-map',
   entry: './js/app.js',
   output: {
     filename: 'app.js',
