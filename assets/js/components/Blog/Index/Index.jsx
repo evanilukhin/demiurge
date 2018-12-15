@@ -1,11 +1,13 @@
 import React from "react"
 
-import Item from './Item/Item'
+import PostCard from './PostCard/PostCard'
 
 export default function Index({posts}) {
   return(
     <div>
-      { posts.map( post => <Item key ={post.id} post={post}/> ) }
+      <AddPost></AddPost>
+      { posts.map( post => <PostCard key ={post.id} post={post}/> ) }
+
     </div>
   );
 }

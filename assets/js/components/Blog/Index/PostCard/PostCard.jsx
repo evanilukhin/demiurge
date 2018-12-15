@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Item({post}) {
+export default function PostCard({post}) {
   return(
     <div>
       <p>{post.id}</p>
