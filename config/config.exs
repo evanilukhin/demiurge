@@ -6,6 +6,8 @@
 use Mix.Config
 
 # General application configuration
+config :phoenix, :json_library, Jason
+
 config :demiurge,
   ecto_repos: [Demiurge.Repo]
 

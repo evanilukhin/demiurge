@@ -8,6 +8,12 @@ use Mix.Config
 # with brunch.io to recompile .js and .css sources.
 config :demiurge, DemiurgeWeb.Endpoint,
   http: [port: 4000],
+  https: [
+      port: 4001,
+      cipher_suite: :strong,
+      certfile: "priv/cert/selfsigned.pem",
+      keyfile: "priv/cert/selfsigned_key.pem"
+  ],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
@@ -49,7 +55,6 @@ config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
 config :demiurge, Demiurge.Repo,
-  adapter: Ecto.Adapters.Postgres,
   username: System.get_env("PG_USER"),
   password: System.get_env("PG_PASS"),
   database: System.get_env("PG_DATABASE"),

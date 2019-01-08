@@ -17,7 +17,8 @@ defmodule DemiurgeWeb.Router do
     pipe_through :api
 
     forward "/graphiql", Absinthe.Plug.GraphiQL,
-      schema: DemiurgeWeb.Schema
+      schema: DemiurgeWeb.Schema,
+      json_codec: Jason
   end
 
   scope "/", DemiurgeWeb do

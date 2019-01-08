@@ -9,7 +9,7 @@ defmodule Demiurge.About.Helpers do
   end
 
   defp read_base_information() do
-    read_document("about.json") |> Poison.decode!() |> Poison.encode!()
+    read_document("about.json") |> Jason.decode!() |> Jason.encode!()
   end
 
   defp read_extended_bio() do

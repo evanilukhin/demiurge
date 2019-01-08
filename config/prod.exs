@@ -66,7 +66,6 @@ config :demiurge, DemiurgeWeb.Endpoint,
 
 # Configure your database
 config :demiurge, Demiurge.Repo,
-  adapter: Ecto.Adapters.Postgres,
   username: System.get_env("PG_USER"),
   password: System.get_env("PG_PASS"),
   database: System.get_env("PG_DATABASE"),

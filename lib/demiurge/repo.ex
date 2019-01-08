@@ -1,5 +1,7 @@
 defmodule Demiurge.Repo do
-  use Ecto.Repo, otp_app: :demiurge
+  use Ecto.Repo,
+    otp_app: :demiurge,
+    adapter: Ecto.Adapters.Postgres
 
   @doc """
   Dynamically loads the repository url from the
