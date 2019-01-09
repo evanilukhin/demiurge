@@ -9,6 +9,7 @@ services:
       PG_DATABASE: demiurge
       PG_HOST: db
       PG_PORT: 5432
+      MIX_ENV: prod
     ports:
       - "5000:5000"
     depends_on:
