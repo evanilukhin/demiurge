@@ -6,5 +6,7 @@ import App                        from './App/App'
 
 import "common_css/app.less";
 
-Modal.setAppElement('#root')
-ReactDOM.render((<App />), document.getElementById('root'));
+const domContainer = document.querySelector('#root');
+
+Modal.setAppElement(domContainer)
+ReactDOM.render((<App />), domContainer);

@@ -1,4 +1,5 @@
 const path = require('path');
+const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -12,7 +13,9 @@ module.exports = (env, options) => ({
     ]
   },
   devtool: 'cheap-module-source-map',
-  entry: './js/app.js',
+  entry: {
+      './js/app.js': ['./js/app.js'].concat(glob.sync('./vendor/**/*.js'))
+  },
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, '../priv/static/js')
@@ -20,10 +23,18 @@ module.exports = (env, options) => ({
   module: {
     rules: [
       {
+         test: /\.mjs$/,
+         include: /node_modules/,
+         type: 'javascript/auto'
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: "babel-loader",
+          options: {
+              presets: ['@babel/react', '@babel/env']
+          }
         }
       },
       {
@@ -53,11 +64,12 @@ module.exports = (env, options) => ({
   },
 
   resolve: {
+    mainFields: ['browser', 'main', 'module'],
     alias: {
       Components: path.resolve(__dirname, 'js/components'),
       common_css: path.resolve(__dirname, 'css')
     },
-    extensions: ['*', '.js', '.jsx', '.less']
+    extensions: ['*', '.js', '.jsx', '.mjs', '.gql', '.graphql','.less']
   },
 
   plugins: [

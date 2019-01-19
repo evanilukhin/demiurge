@@ -17,12 +17,14 @@ defmodule DemiurgeWeb do
   and import those modules here.
   """
 
+
   def controller do
     quote do
       use Phoenix.Controller, namespace: DemiurgeWeb
       import Plug.Conn
-      import DemiurgeWeb.Router.Helpers
       import DemiurgeWeb.Gettext
+
+      alias DemiurgeWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -37,9 +39,11 @@ defmodule DemiurgeWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import DemiurgeWeb.Router.Helpers
       import DemiurgeWeb.ErrorHelpers
       import DemiurgeWeb.Gettext
+
+
+      alias DemiurgeWeb.Router.Helpers, as: Routes
     end
   end
 
