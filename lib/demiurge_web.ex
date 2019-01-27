@@ -17,7 +17,6 @@ defmodule DemiurgeWeb do
   and import those modules here.
   """
 
-
   def controller do
     quote do
       use Phoenix.Controller, namespace: DemiurgeWeb
@@ -30,8 +29,9 @@ defmodule DemiurgeWeb do
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/demiurge_web/templates",
-                        namespace: DemiurgeWeb
+      use Phoenix.View,
+        root: "lib/demiurge_web/templates",
+        namespace: DemiurgeWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
@@ -41,7 +41,6 @@ defmodule DemiurgeWeb do
 
       import DemiurgeWeb.ErrorHelpers
       import DemiurgeWeb.Gettext
-
 
       alias DemiurgeWeb.Router.Helpers, as: Routes
     end

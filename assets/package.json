@@ -7,13 +7,16 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^11.2.0",
+    "@ckeditor/ckeditor5-react": "^1.1.0",
     "apollo-boost": "^0.1.13",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
+    "interweave": "^10.0.0",
     "jssha": "^2.3.1",
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html",
-    "react": "^16.6",
+    "react": "^16.7.0",
     "react-apollo": "^2.1.11",
     "react-cookie": "^3.0.8",
     "react-dom": "^16.3",
@@ -41,6 +44,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "style-loader": "^0.21.0",
+    "terser-webpack-plugin": "^1.2.1",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"

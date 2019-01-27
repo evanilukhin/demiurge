@@ -22,7 +22,8 @@ defmodule DemiurgeWeb.Router do
   end
 
   scope "/", DemiurgeWeb do
-    pipe_through :browser # Use the default browser stack
+    # Use the default browser stack
+    pipe_through :browser
 
     get "/*path", PageController, :index
   end

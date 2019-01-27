@@ -11,7 +11,7 @@ defmodule Demiurge.Application do
       # Start the Ecto repository
       supervisor(Demiurge.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(DemiurgeWeb.Endpoint, []),
+      supervisor(DemiurgeWeb.Endpoint, [])
       # Start your own worker by calling: Demiurge.Worker.start_link(arg1, arg2, arg3)
       # worker(Demiurge.Worker, [arg1, arg2, arg3]),
     ]

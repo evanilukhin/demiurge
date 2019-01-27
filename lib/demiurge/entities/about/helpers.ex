@@ -4,8 +4,7 @@ defmodule Demiurge.About.Helpers do
      %Demiurge.About{
        base_information: read_base_information(),
        extended_bio: read_extended_bio()
-     }
-    }
+     }}
   end
 
   defp read_base_information() do
@@ -21,6 +20,6 @@ defmodule Demiurge.About.Helpers do
     Application.app_dir(:demiurge, "priv/data")
     |> Path.join("en")
     |> Path.join(name)
-    |> File.read!
+    |> File.read!()
   end
 end
