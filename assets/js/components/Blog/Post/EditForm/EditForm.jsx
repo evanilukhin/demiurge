@@ -6,22 +6,13 @@ import { Markup } from 'interweave';
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 
-const UPDATE_POST_MUTATION = gql`
-  mutation updatePost($id: Int!, $mainPart: !String) {
-    updatePost(id: $id, mainPart: $mainPart) {
-        id
-        mainPart
-    }
-  }
-`
+
 
 export default class EditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { post: this.props.post };
-
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSave   = this.handleSave.bind(this);
   }
 
@@ -30,12 +21,13 @@ export default class EditForm extends React.Component {
   }
 
   handleSave(event) {
-    console.log("Saved:" + this.state.post.mainPart)
-  }
-
-  handleSubmit(event) {
-    alert("A name was submitted: " + this.state.post.mainPart);
-    event.preventDefault();
+    this.props.mutate({
+      variables: { id: this.state.post.id, mainPart: this.state.post.mainPart }
+    }).then(({ data }) => {
+        console.log('got data', data);
+    }).catch((error) => {
+        console.log('there was an error sending the query', error);
+    });
   }
 
   render() {
