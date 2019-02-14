@@ -63,7 +63,7 @@ class AuthPinapple extends React.Component {
   render() {
     return (
       <a onClick={this.openModal}>
-        <img className={style.ananas} border="0" src="images/ananas-256.png"/>
+        <img className={style.ananas} border="0" src="/images/ananas-256.png"/>
         <Modal
            isOpen={this.state.modalIsOpen}
            onRequestClose={this.closeModal}

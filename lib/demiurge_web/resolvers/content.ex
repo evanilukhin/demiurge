@@ -3,6 +3,10 @@ defmodule DemiurgeWeb.Resolvers.Content do
     {:ok, Demiurge.Post.Helpers.get_all_posts()}
   end
 
+  def get_post(_parent, args, _resolution) do
+    Demiurge.Post.Helpers.get_post(args)
+  end
+
   def post_comments(parent, _args, _resolution) do
     Demiurge.Post.Helpers.get_comments(parent)
   end

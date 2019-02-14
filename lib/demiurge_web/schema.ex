@@ -10,6 +10,12 @@ defmodule DemiurgeWeb.Schema do
       resolve(&Resolvers.Content.list_posts/3)
     end
 
+    @desc "Get post"
+    field :post, type: :post do
+      arg :id, non_null(:id)
+      resolve(&Resolvers.Content.get_post/3)
+    end
+
     @desc "Get about"
     field :about, type: :about do
       resolve(&Resolvers.Content.about/3)
@@ -30,7 +36,7 @@ defmodule DemiurgeWeb.Schema do
     field :update_post, type: :post do
       arg(:id, non_null(:id))
       arg(:main_part, non_null(:string))
-      arg(:state, :string)
+      arg(:header, non_null(:string))
 
       resolve(&Resolvers.Content.update_post/3)
     end

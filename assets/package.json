@@ -7,6 +7,7 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
+    "@babel/runtime": "^7.3.1",
     "@ckeditor/ckeditor5-build-classic": "^11.2.0",
     "@ckeditor/ckeditor5-react": "^1.1.0",
     "apollo-boost": "^0.1.13",
@@ -27,13 +28,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.2.3",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
     "copy-webpack-plugin": "^4.5.0",
     "css-loader": "^1.0.0",
     "less": "^3.5.3",

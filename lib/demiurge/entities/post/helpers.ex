@@ -26,8 +26,12 @@ defmodule Demiurge.Post.Helpers do
       from(p in Post,
         select: p
       )
-
     Repo.all(query)
+  end
+
+  def get_post(args) do
+    post = Repo.get_by(Post, id: args[:id])
+    {:ok, post}
   end
 
   def get_comments(%Post{} = post) do

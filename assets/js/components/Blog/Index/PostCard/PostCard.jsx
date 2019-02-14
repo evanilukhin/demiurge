@@ -1,13 +1,13 @@
 import React from "react"
-import EditMutation from 'Components/Blog/Post/EditMutation/EditMutation'
+import { Markup } from 'interweave';
+
 export default function PostCard({post}) {
   return(
     <div>
       <p>{post.id}</p>
-      <p>{post.mainPart}</p>
+      <Markup content={post.mainPart} />
       <p>{post.state}</p>
       <p>{post.tags}</p>
-      <EditMutation post={post}/>
       <hr/>
     </div>
   );
