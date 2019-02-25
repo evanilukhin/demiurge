@@ -1,5 +1,7 @@
 use Mix.Config
 
+config :demiurge,
+  admin_token: System.get_env("ADMIN_TOKEN")
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :demiurge, DemiurgeWeb.Endpoint,
