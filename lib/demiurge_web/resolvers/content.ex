@@ -11,12 +11,20 @@ defmodule DemiurgeWeb.Resolvers.Content do
     Demiurge.Post.Helpers.get_comments(parent)
   end
 
-  def create_post(_parent, args, _resolution) do
+  def create_post(_parent, args, %{context: %{current_user: :admin}}) do
     Demiurge.Post.Helpers.create_post(args)
   end
 
-  def update_post(_parent, args, _resolution) do
+  def create_post(_parent, _args, _resolution) do
+    {:error, 'Posts can create only admin'}
+  end
+
+  def update_post(_parent, args, %{context: %{current_user: :admin}}) do
     Demiurge.Post.Helpers.update_post(args)
+  end
+
+  def update_post(_parent, _args, _resolution) do
+    {:error, 'Only admin can update posts'}
   end
 
   def create_comment(_parent, args, _resolution) do

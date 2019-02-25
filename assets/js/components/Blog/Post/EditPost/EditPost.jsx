@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import EditForm from 'Components/Blog/Post/EditForm/EditForm';
 
 const UPDATE_POST = gql`
-  mutation updatePost($id: Int!, $mainPart: String!) {
+  mutation updatePost($id: Int!, $mainPart: String!, $header: String!) {
     updatePost(id: $id, header: $header, mainPart: $mainPart) {
         id
         header

@@ -19,7 +19,6 @@ const customStyles = {
 class AuthPinapple extends React.Component {
   constructor(props) {
     super(props);
-    const { cookies } = props;
     this.state = {
       modalIsOpen: false,
       admin_password: ''
@@ -31,14 +30,12 @@ class AuthPinapple extends React.Component {
   }
 
   authentification(encrypted_password) {
-    const { cookies } = this.props;
-    cookies.set("encrypted_password", encrypted_password, {path: "/"})
+    localStorage.setItem("encrypted_password", encrypted_password)
   }
 
   openModal() {
-    const { cookies } = this.props;
-    if (cookies.get("encrypted_password")) {
-      cookies.remove("encrypted_password");
+    if (localStorage.getItem("encrypted_password")) {
+      localStorage.removeItem("encrypted_password");
     } else {
       this.setState({modalIsOpen: true});
     }
