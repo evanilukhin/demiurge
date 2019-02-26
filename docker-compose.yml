@@ -10,6 +10,8 @@ services:
       PG_HOST: db
       PG_PORT: 5432
       MIX_ENV: prod
+      ADMIN_TOKEN: "${ADMIN_TOKEN}"
+      PORT: 5000
     ports:
       - "5000:5000"
     depends_on:
