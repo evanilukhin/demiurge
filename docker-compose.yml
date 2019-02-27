@@ -11,6 +11,7 @@ services:
       PG_PORT: 5432
       MIX_ENV: prod
       ADMIN_TOKEN: "${ADMIN_TOKEN}"
+      HOST: "${HOST}"
       PORT: 5000
     ports:
       - "5000:5000"
