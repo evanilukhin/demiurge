@@ -1,5 +1,5 @@
 {
-  "description": "Developer with 3 years of production experience. Very love to write (and especially read) human readable, structured code and work with microservices.  Have a background in application integration using  REST API, DB, Talend OpenESB, Apache Kafka.  Interest developing high-loaded microservices(on Elixir/Erlang, Go), a modern web-development (RoR, Elixir Phoenix, React, Less) and also mediating communication among applications with message brokers or integration frameworks. ",
+  "description": "Developer with three years of production experience. Very love to write (and especially read) human readable, structured code and work with microservices.  Have a background in application integration using  REST API, DB, Talend OpenESB, Apache Kafka.  Interest developing high-loaded microservices(on Elixir/Erlang, Go), a modern web-development (RoR, Elixir Phoenix, React, Less) and also mediating communication among applications with message brokers or integration frameworks. Also, I am interested in behavioural psychology and researches about decision-making.",
   "contacts": [
     {
       "type": "github",
@@ -26,7 +26,7 @@
   "resume" : {
     "personal_info": {
       "name": "Ivan",
-      "soname": "Iliukhin",
+      "soname": "Ilukhin",
       "dob": "1995.02.21",
       "citizenship": "Russia",
       "current_location": "Zelenograd, Moscow, Russia"
@@ -41,7 +41,7 @@
     "skills": [
       {
         "category": "Have working experience, and know about",
-        "text": "Ruby/RoR, Elixir/Phoenix, SQL(mostly PostgreSQL), CSS(including SASS and LESS), Talend OpenESB, Apache Kafka, Docker, Apache Karaf, REST, GraphQL, SOA)"
+        "text": "Ruby/RoR, Elixir/Phoenix, SQL(mostly PostgreSQL), CSS(including SASS and LESS), ElasticSearch, Talend OpenESB, Apache Kafka, Docker, Apache Karaf, REST, GraphQL, SOA)"
       },
       {
         "category": "Have working experience, but it's not my strong suit",
@@ -49,15 +49,15 @@
       },
       {
         "category": "Have only the theoretical knowledge",
-        "text": "ElasticSearch, Redis, Logstash, Nagios, NoSQL databases"
+        "text": "Redis, Logstash, Nagios, NoSQL databases"
       },
       {
         "category": "Other",
-        "text": "Have a background in using design patterns and antipatterns including EIP"
+        "text": "Have a background in using design patterns and antipatterns including EIP. "
       },
       {
         "category": "Languages",
-        "text": "Russian — native, English — intermediate/ready for interview"
+        "text": "English — intermediate/ready for interview, Russian — native"
       }
     ]
   }
