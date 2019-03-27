@@ -3,12 +3,17 @@ defmodule Demiurge.Post.Helpers do
   alias Demiurge.Repo
 
   import Ecto.Query
+  require Logger
 
   def create_post(args) do
     changeset = Post.changeset(%Post{state: "draft"}, args)
 
     if changeset.valid? do
       {:ok, _post} = Repo.insert(changeset)
+    else
+      error_string = "Bad changeset : " <> to_string(changeset.errors)
+      Logger.error(error_string)
+      {:error, message: error_string}
     end
   end
 
@@ -18,6 +23,10 @@ defmodule Demiurge.Post.Helpers do
 
     if changeset.valid? do
       {:ok, _post} = Repo.insert_or_update(changeset)
+    else
+      error_string = "Bad changeset : " <> to_string(changeset.errors)
+      Logger.error(error_string)
+      {:error, message: error_string}
     end
   end
 
