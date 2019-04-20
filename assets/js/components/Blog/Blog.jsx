@@ -9,6 +9,7 @@ const GET_POSTS = gql`
   {
     posts {
       id
+      header
       mainPart
       state
       tags
