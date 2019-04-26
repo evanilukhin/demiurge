@@ -12,7 +12,7 @@ export default function PostCard({post}) {
       </div>
       <Markup className={style.preview} content={post.mainPart} />
       <div className = {style.show_more_button}>
-        Show more
+        Show more...
       </div>
     </div>
   );
