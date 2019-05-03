@@ -3,9 +3,9 @@ import ReactLoading from "react-loading";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 
-import Navbar from 'Components/Navbar/Navbar'
-import Content from 'Components/Content/Content'
-import Footer from 'Components/Footer/Footer'
+import Navbar from './Navbar/Navbar'
+import Content from './Content/Content'
+import Footer from './Footer/Footer'
 
 import style from './Main.less'
 

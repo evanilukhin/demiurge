@@ -36,7 +36,7 @@ export default class EditForm extends React.Component {
     this.props.mutate({
       variables: this.state
     }).catch((error) => {
-      console.log('there was an error sending the query', error);
+      console.log('there was an error, whesending the query', error);
     });
   }
 
