@@ -1,32 +1,47 @@
+@import "~common_css/constants.less";
+
 .main {
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  border: 1px solid #dadada;
-  margin-bottom: 10px;
-  padding: 10px;
+    padding: 10px 10px;
+    font-family: PalanquinRegular;
+    font-size: 17px;
+    color: rgba(0,0,0,0.75);
 }
 .header {
-  font: 25px sans-serif;
-  padding: 0 25px;
-  font-family: Sniglet;
-  text-transform: uppercase;
+    font-size: 2em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 0 25px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 .preview {
-  font-size: 2;
+    font-size: 2;
 }
-.tags {
-  display: none;
-}
-.show_more_button {
-  background-color: #eae7e7; /* Green */
-  border: none;
-  color: black;
-  padding: 5px 10px;
+// I took this example from there - https://codepen.io/ericrasch/pen/Irlpm
+.date {
+  position: relative;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  border-radius: 5px;
-  width: 100px;
+  z-index: 1;
+
+  &:before {
+      border-top: 2px solid #dfdfdf;
+      content:"";
+      margin: 0 auto;
+      position: absolute;
+      top: 50%; left: 0; right: 0; bottom: 0;
+      width: 100%;
+      z-index: -1;
+  }
+
+  span {
+    background: @back;
+    padding: 0 15px;
+  }
+}
+
+.line {
+    border-top: 2px solid #dfdfdf;
+    display: block;
+    position: relative;
+    top: 50%; left: 0; right: 0; bottom: 0;
 }

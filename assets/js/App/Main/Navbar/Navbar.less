@@ -5,6 +5,7 @@
 @font_shadow_color: rgba(12, 12, 12, 0.64);
 
 .nav {
+  z-index: 100;
   position: sticky;
   overflow: hidden;
   top: 0;
@@ -38,17 +39,17 @@
 }
 
 .active_link {
-  background-color: @back;
+  background-color: #ffffff1a;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 700px) {
   .nav_content {
     width: 100%;
     justify-content: space-around;
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 500px) {
   .nav_content {
     width: 100%;
     flex-flow: column wrap;
