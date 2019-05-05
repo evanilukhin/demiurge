@@ -2,7 +2,6 @@ import React from "react"
 
 import Description from './Description/Description'
 import Resume from './Resume/Resume'
-import Blog from 'Components/Blog/Blog'
 
 import style from './About.less'
 

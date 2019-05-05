@@ -1,30 +1,10 @@
 import React, { Component } from 'react';
 import { Mutation, ApolloConsumer, Query, graphql } from 'react-apollo';
 import gql from 'graphql-tag';
-
-import EditForm from 'Components/Blog/Post/EditForm/EditForm';
-
-const UPDATE_POST = gql`
-  mutation updatePost($id: Int!, $mainPart: String!, $header: String!) {
-    updatePost(id: $id, header: $header, mainPart: $mainPart) {
-        id
-        header
-        mainPart
-    }
-  }
-`
+import {GET_POST, UPDATE_POST} from './queries'
+import EditForm from './EditForm';
 
 const EditFormWithMutator = graphql(UPDATE_POST)(EditForm);
-
-const GET_POST = gql`
-  query getPost($id: Int!) {
-    post(id: $id) {
-      id
-      header
-      mainPart
-    }
-  }
-`
 
 const EditPost = ({ match }) => (
   <Query query={GET_POST} variables={ match.params }>

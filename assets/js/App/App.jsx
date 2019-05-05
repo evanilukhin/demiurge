@@ -7,7 +7,7 @@ import { CookiesProvider } from 'react-cookie';
 import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import Main from 'Components/Main/Main'
+import Main from './Main/Main'
 
 export default function App() {
   const requestHeader = async operation => {
