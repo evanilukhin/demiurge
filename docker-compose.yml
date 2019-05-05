@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: evanilukhin/demiurge
+    image: evanilukhin/demiurge:latest
     environment:
       # Variables to connect to our Postgres server
       PG_USER: postgres
