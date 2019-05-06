@@ -6,9 +6,11 @@ import style from './Post.less'
 export default function Post({post}) {
   return(
     <div className={style.main}>
+      <meta property="og:title"       content={post.header}/>
+      <meta property="og:description" content={post.summary}/>
       <div className={style.date}>
         <span>
-          05-05-2019
+          {post.insertedAt}
         </span>
       </div>
       <div className={style.header}>

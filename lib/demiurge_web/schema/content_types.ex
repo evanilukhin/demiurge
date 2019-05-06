@@ -6,6 +6,8 @@ defmodule DemiurgeWeb.Schema.ContentTypes do
   object :post do
     field :id, :id
     field :header, :string
+    field :summary, :string
+    field :short, :boolean
     field :main_part, :string
     field :state, :string
     field :tags, list_of(:string)
@@ -14,6 +16,16 @@ defmodule DemiurgeWeb.Schema.ContentTypes do
     field :comments, list_of(:comment) do
       resolve &Resolvers.Content.post_comments/3
     end
+  end
+
+  object :post_preview do
+    field :id, :id
+    field :header, :string
+    field :summary, :string
+    field :short, :boolean
+    field :state, :string
+    field :tags, list_of(:string)
+    field :inserted_at, :string
   end
 
   object :comment do

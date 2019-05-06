@@ -27,7 +27,7 @@ defmodule DemiurgeWeb.Plugs.Authentification do
     if token == admin_token() do
       {:ok, :admin}
     else
-      message = "invalid authorization token | " <> token <> " | " <> admin_token()
+      message = "invalid authorization token | " <> token
       Logger.error(message)
       {:error, message: message}
     end

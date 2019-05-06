@@ -5,13 +5,17 @@ import { Link } from 'react-router-dom'
 import style from './PostCard.less'
 
 export default function PostCard({post}) {
+  let showMoreLink;
+  if (!post.short){
+    showMoreLink = <Link to={`/posts/${post.id}`} className = {style.show_more_button}>Show more...</Link>
+  }
   return(
     <div className={style.main}>
       <div className={style.header}>
         {post.header}
       </div>
-      <Markup className={style.preview} content={post.mainPart} />
-      <Link to={`/posts/${post.id}`} className = {style.show_more_button}>Show more...</Link>
+      <Markup className={style.preview} content={post.summary} />
+      {showMoreLink}
     </div>
   );
 }

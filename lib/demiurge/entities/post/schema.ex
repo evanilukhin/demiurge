@@ -6,6 +6,8 @@ defmodule Demiurge.Post do
   schema "posts" do
     field(:head_image, :string)
     field(:header, :string)
+    field(:summary, :string)
+    field(:short, :boolean)
     field(:main_part, :string)
     field(:state, :string)
     field(:tags, {:array, :string})
@@ -17,7 +19,7 @@ defmodule Demiurge.Post do
 
   def changeset(post, params) do
     post
-    |> cast(params, [:header, :main_part, :state, :tags])
+    |> cast(params, [:header, :main_part, :state, :tags, :summary, :short])
     |> validate_required([:header, :main_part, :state])
     |> validate_inclusion(:state, ["draft", "published"])
     |> unique_constraint(:header)

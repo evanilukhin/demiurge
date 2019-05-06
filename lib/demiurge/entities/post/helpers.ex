@@ -32,9 +32,17 @@ defmodule Demiurge.Post.Helpers do
 
   def get_all_posts() do
     query =
-      from(p in Post,
-        select: p
-      )
+      from Post,
+        select: [
+          :id,
+          :header,
+          :summary,
+          :short,
+          :state,
+          :tags,
+          :inserted_at
+        ],
+        order_by: [desc: :id]
     Repo.all(query)
   end
 

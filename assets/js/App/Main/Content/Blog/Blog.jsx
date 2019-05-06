@@ -10,9 +10,11 @@ const GET_POSTS = gql`
     posts {
       id
       header
-      mainPart
+      summary
+      short
       state
       tags
+      insertedAt
     }
   }
 `;

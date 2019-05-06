@@ -6,7 +6,7 @@ defmodule DemiurgeWeb.Schema do
 
   query do
     @desc "Get all posts"
-    field :posts, list_of(:post) do
+    field :posts, list_of(:post_preview) do
       resolve(&Resolvers.Content.list_posts/3)
     end
 
@@ -26,18 +26,20 @@ defmodule DemiurgeWeb.Schema do
     @desc "Create post"
     field :create_post, type: :post do
       arg(:header, non_null(:string))
-      arg(:main_part, non_null(:string))
+      arg(:short, :boolean)
+      arg(:summary, :string)
+      arg(:main_part, :string)
       arg(:state, :string)
-
       resolve(&Resolvers.Content.create_post/3)
     end
 
     @desc "Update post"
     field :update_post, type: :post do
       arg(:id, non_null(:id))
-      arg(:main_part, non_null(:string))
       arg(:header, non_null(:string))
-
+      arg(:short, :boolean)
+      arg(:summary, :string)
+      arg(:main_part, :string)
       resolve(&Resolvers.Content.update_post/3)
     end
 
