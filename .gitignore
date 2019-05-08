@@ -27,3 +27,4 @@ node_modules
 # variables.
 /config/*.secret.exs
 /.idea
+demiurge.iml
