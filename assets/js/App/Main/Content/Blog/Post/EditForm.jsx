@@ -1,8 +1,8 @@
 import React from "react";
-import { Markup } from 'interweave';
+import ReactMarkdown from 'react-markdown';
+import TextareaAutosize from 'react-textarea-autosize';
 
-import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import Code from "./Code";
 
 export default class EditForm extends React.Component {
   constructor(props) {
@@ -35,8 +35,8 @@ export default class EditForm extends React.Component {
   handleSummaryChange(event) {
     this.setState({summary: event.target.value});
   }
-  handleMainPartChange(event, data) {
-    this.setState({mainPart: data });
+  handleMainPartChange(event) {
+    this.setState({mainPart: event.target.value });
   }
 
   handleHeader(event) {
@@ -58,17 +58,14 @@ export default class EditForm extends React.Component {
           Header:
           <input type="text" value={this.state.header} onChange={this.handleHeader} />
         </label>
-        <textarea value={this.state.summary} onChange={this.handleSummaryChange} rows="6" cols="95" />
+        <TextareaAutosize value={this.state.summary} onChange={this.handleSummaryChange} style={{width: '100%'}} />
         <input type="checkbox" checked={this.state.short} onChange={this.handleShortChange}/>
-        <CKEditor
-          editor={ClassicEditor}
-          data={this.state.mainPart}
-          onChange={(event, editor) => {
-            const data = editor.getData();
-            this.handleMainPartChange(event, data);
-          }}
-        />
-        <Markup content={this.state.mainPart} />
+        <TextareaAutosize
+          value={this.state.mainPart}
+          onChange={this.handleMainPartChange}
+          style={{width: '100%'}}
+          minRows={10}/>
+        <ReactMarkdown source={this.state.mainPart} escapeHtml={false} renderers={{ code: Code }}/>
         <button onClick={this.handleSave}>
           Save
         </button>
