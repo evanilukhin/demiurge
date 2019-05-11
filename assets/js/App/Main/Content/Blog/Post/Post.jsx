@@ -1,7 +1,8 @@
 import React from "react"
-import { Markup } from 'interweave';
+import ReactMarkdown from 'react-markdown';
 
 import style from './Post.less'
+import Code from "./Code";
 
 export default function Post({post}) {
   return(
@@ -17,7 +18,7 @@ export default function Post({post}) {
         {post.header}
       </div>
       <div className={style.line}/>
-      <Markup className={style.preview} content={post.mainPart} />
+      <ReactMarkdown source={post.mainPart} escapeHtml={false} renderers={{ code: Code }}/>
     </div>
   );
 }
