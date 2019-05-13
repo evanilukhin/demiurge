@@ -2,6 +2,7 @@ import React from "react"
 import ReactLoading from "react-loading";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
+import { Helmet } from "react-helmet";
 
 import Navbar from './Navbar/Navbar'
 import Content from './Content/Content'
@@ -31,6 +32,11 @@ export default class Main extends React.Component {
           }
           return(
             <div className={style.main}>
+              <Helmet>
+                <meta charSet="utf-8" />
+                <title>Evan Ilukhin</title>
+              </Helmet>
+
               <div className={style.content}>
                 <Navbar />
                 <Content aboutMe={about}/>

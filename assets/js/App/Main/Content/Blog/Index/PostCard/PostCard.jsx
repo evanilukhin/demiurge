@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown';
-
+import SharePanel from '../../Post/SharePanel'
 import style from './PostCard.less'
 
 export default function PostCard({post}) {
@@ -16,6 +16,7 @@ export default function PostCard({post}) {
       </div>
       <ReactMarkdown className={style.preview} source={post.summary} />
       {showMoreLink}
+      <SharePanel post={post}/>
     </div>
   );
 }
