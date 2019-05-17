@@ -1,3 +1,4 @@
-defmodule DemiurgeWeb.PageView do
+defmodule DemiurgeWeb.PostView do
   use DemiurgeWeb, :view
+  
 end
