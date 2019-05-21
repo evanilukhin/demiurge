@@ -1,21 +1,22 @@
 defmodule DemiurgeWeb.PostController do
   use DemiurgeWeb, :controller
 
-  def show(conn, params) do
-    refined_params = params |> Map.new(fn {k, v} -> {String.to_atom(k), v} end)
-    {:ok, post} = Demiurge.Post.Helpers.get_post(refined_params)
-    render(conn, "index.html", meta_attrs: post_attributes(post, conn, params))
+  plug :put_layout, "meta.html"
+
+  def meta(conn, %{"id" => id}) do
+    {:ok, post} = Demiurge.Post.Helpers.get_post(id: id)
+    render(conn, "meta.html", meta_attrs: post_attributes(post, conn, id))
   end
 
-  defp post_attributes(post, conn, params) do
+  defp post_attributes(post, conn, id) do
     %Demiurge.Post{summary: summary, header: header, head_image: head_image} = post
     [
-      %{name: "og:description", content: summary},
-      %{name: "description", content: summary},
-      %{name: "author", content: "Ivan Ilukhin"},
       %{name: "title", content: header <> " | Ivan Ilukhin"},
+      %{name: "author", content: "Ivan Ilukhin"},
+      %{name: "description", content: summary},
       %{name: "og:title", content: header},
-      %{property: "og:url", content: DemiurgeWeb.Router.Helpers.url(conn) <> "/posts/" <> params["id"]},
+      %{name: "og:description", content: summary},
+      %{property: "og:url", content: DemiurgeWeb.Router.Helpers.url(conn) <> "/posts/" <> id},
       %{property: "og:image", content: head_image},
     ]
   end
