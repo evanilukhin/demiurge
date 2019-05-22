@@ -4,6 +4,18 @@ import ReactMarkdown from 'react-markdown';
 import SharePanel from '../../Post/SharePanel'
 import style from './PostCard.less'
 
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  TelegramShareButton,
+  PinterestShareButton,
+  VKShareButton,
+  RedditShareButton,
+
+  FacebookIcon
+} from 'react-share';
+
 export default function PostCard({post}) {
   let showMoreLink;
   if (!post.short){
