@@ -1,6 +1,6 @@
 import React from "react"
 import ReactMarkdown from 'react-markdown';
-import {Helmet} from "react-helmet";
+import SharePanel from './SharePanel'
 
 import style from './Post.less'
 import Code from "./Code";
@@ -17,7 +17,9 @@ export default function Post({post}) {
         {post.header}
       </div>
       <div className={style.line}/>
+      <SharePanel post={post}/>
       <ReactMarkdown source={post.mainPart} escapeHtml={false} renderers={{ code: Code }}/>
+      <SharePanel post={post}/>
     </div>
   );
 }
