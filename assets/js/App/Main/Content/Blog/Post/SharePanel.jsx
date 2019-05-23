@@ -7,7 +7,13 @@ import {
   VKShareButton,
   RedditShareButton,
 
-  FacebookIcon
+  FacebookIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  TelegramIcon,
+  VKIcon,
+  RedditIcon
+
 } from 'react-share';
 
 import style from './SharePanel.less'
@@ -18,44 +24,38 @@ export default function SharePanel({post}) {
     <div className={style.main}>
       <FacebookShareButton
         url={window.location.origin + "/posts/" + post.id}
-        quote={post.summary}
         className="Demo__some-network__share-button">
         <FacebookIcon size={32} round />
       </FacebookShareButton>
 
       <LinkedinShareButton
         url={window.location.origin + "/posts/" + post.id}
-        quote={post.summary}
         className="Demo__some-network__share-button">
-        <FacebookIcon size={32} round />
+        <LinkedinIcon size={32} round />
       </LinkedinShareButton>
 
       <TwitterShareButton
         url={window.location.origin + "/posts/" + post.id}
-        quote={post.summary}
         className="Demo__some-network__share-button">
-        <FacebookIcon size={32} round />
+        <TwitterIcon size={32} round />
       </TwitterShareButton>
 
       <TelegramShareButton
         url={window.location.origin + "/posts/" + post.id}
-        quote={post.summary}
         className="Demo__some-network__share-button">
-        <FacebookIcon size={32} round />
+        <TelegramIcon size={32} round />
       </TelegramShareButton>
 
       <VKShareButton
         url={window.location.origin + "/posts/" + post.id}
-        quote={post.summary}
         className="Demo__some-network__share-button">
-        <FacebookIcon size={32} round />
+        <VKIcon size={32} round />
       </VKShareButton>
 
       <RedditShareButton
         url={window.location.origin + "/posts/" + post.id}
-        quote={post.summary}
         className="Demo__some-network__share-button">
-        <FacebookIcon size={32} round />
+        <RedditIcon size={32} round />
       </RedditShareButton>
     </div>
   );
