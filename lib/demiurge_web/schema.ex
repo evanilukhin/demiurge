@@ -26,6 +26,7 @@ defmodule DemiurgeWeb.Schema do
     @desc "Create post"
     field :create_post, type: :post do
       arg(:header, non_null(:string))
+      arg(:head_image, :string)
       arg(:short, :boolean)
       arg(:summary, :string)
       arg(:main_part, :string)
@@ -37,6 +38,7 @@ defmodule DemiurgeWeb.Schema do
     field :update_post, type: :post do
       arg(:id, non_null(:id))
       arg(:header, non_null(:string))
+      arg(:head_image, :string)
       arg(:short, :boolean)
       arg(:summary, :string)
       arg(:main_part, :string)

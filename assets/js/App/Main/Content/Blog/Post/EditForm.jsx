@@ -1,6 +1,7 @@
 import React from "react";
 import ReactMarkdown from 'react-markdown';
 import TextareaAutosize from 'react-textarea-autosize';
+import {boundMethod} from 'autobind-decorator'
 
 import Code from "./Code";
 
@@ -8,46 +9,57 @@ export default class EditForm extends React.Component {
   constructor(props) {
     super(props);
     if (props.post != null) {
+      let {id, summary, short, mainPart, header, headImage} = this.props.post;
       this.state = {
-        id: props.post.id,
-        summary: props.post.summary,
-        short: props.post.short,
-        mainPart: props.post.mainPart,
-        header: props.post.header
+        id: id,
+        summary: summary,
+        short: short,
+        mainPart: mainPart,
+        header: header,
+        headImage: headImage
       };
     } else {
       this.state = {
         summary: "",
         short: true,
         mainPart: "",
-        header:""
+        header:"",
+        headImage: ""
       };
     }
-    this.handleShortChange   = this.handleShortChange.bind(this);
-    this.handleSummaryChange =  this.handleSummaryChange.bind(this);
-    this.handleMainPartChange = this.handleMainPartChange.bind(this);
-    this.handleHeader = this.handleHeader.bind(this);
-    this.handleSave   = this.handleSave.bind(this);
   }
+
+  @boundMethod
   handleShortChange(event) {
     this.setState({short: event.target.checked});
   }
+
+  @boundMethod
   handleSummaryChange(event) {
     this.setState({summary: event.target.value});
   }
+
+  @boundMethod
   handleMainPartChange(event) {
     this.setState({mainPart: event.target.value });
   }
 
+  @boundMethod
   handleHeader(event) {
     this.setState({header: event.target.value });
   }
 
+  @boundMethod
+  handleHeadImage(event) {
+    this.setState({headImage: event.target.value});
+  }
+
+  @boundMethod
   handleSave(event) {
     this.props.mutate({
       variables: this.state
     }).catch((error) => {
-      console.log('there was an error, whesending the query', error);
+      console.log('there was an error, when sending the query', error);
     });
   }
 
@@ -57,6 +69,10 @@ export default class EditForm extends React.Component {
         <label>
           Header:
           <input type="text" value={this.state.header} onChange={this.handleHeader} />
+        </label>
+        <label>
+          Head Image:
+          <input type="text" value={this.state.headImage} onChange={this.handleHeadImage} />
         </label>
         <TextareaAutosize value={this.state.summary} onChange={this.handleSummaryChange} style={{width: '100%'}} />
         <input type="checkbox" checked={this.state.short} onChange={this.handleShortChange}/>

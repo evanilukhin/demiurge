@@ -19,7 +19,7 @@ defmodule Demiurge.Post do
 
   def changeset(post, params) do
     post
-    |> cast(params, [:header, :main_part, :state, :tags, :summary, :short])
+    |> cast(params, [:header, :main_part, :state, :tags, :summary, :short, :head_image])
     |> validate_required([:header, :main_part, :state])
     |> validate_inclusion(:state, ["draft", "published"])
     |> unique_constraint(:header)
