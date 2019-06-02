@@ -1,1 +1,0 @@
-Hello, my name is Ivan and I'm a software engineer. I've started programming since a high school, where begun to take a part in olympiad in informatics and different local contests. It was very fun time, but  I got bored in it after first year studying in the university. 

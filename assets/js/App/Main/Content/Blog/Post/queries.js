@@ -5,6 +5,7 @@ export const GET_POST = gql`
     post(id: $id) {
       id
       header
+      headImage
       summary
       short
       mainPart
@@ -14,10 +15,11 @@ export const GET_POST = gql`
 `
 
 export const CREATE_POST = gql`
-  mutation createPost($header: String!, $mainPart: String!, $short:Boolean!, $summary: String!) {
-    createPost(header: $header, mainPart: $mainPart, summary: $summary, short: $short) {
+  mutation createPost($header: String!, $mainPart: String!, $short:Boolean!, $summary: String!, $headImage: String!) {
+    createPost(header: $header, mainPart: $mainPart, summary: $summary, short: $short, headImage: $headImage) {
         id
         header
+        headImage
         short
         summary
         mainPart
@@ -26,10 +28,11 @@ export const CREATE_POST = gql`
 `
 
 export const UPDATE_POST = gql`
-  mutation updatePost($id: Int!, $mainPart: String!, $header: String!, $short:Boolean!, $summary: String!) {
-    updatePost(id: $id, header: $header, mainPart: $mainPart, summary: $summary, short: $short) {
+  mutation updatePost($id: Int!, $mainPart: String!, $header: String!, $headImage: String!, $short:Boolean!, $summary: String!, ) {
+    updatePost(id: $id, header: $header, mainPart: $mainPart, summary: $summary, short: $short, headImage: $headImage) {
         id
         header
+        headImage
         short
         summary
         mainPart

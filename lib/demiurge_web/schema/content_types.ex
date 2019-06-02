@@ -8,6 +8,7 @@ defmodule DemiurgeWeb.Schema.ContentTypes do
     field :header, :string
     field :summary, :string
     field :short, :boolean
+    field :head_image, :string
     field :main_part, :string
     field :state, :string
     field :tags, list_of(:string)
