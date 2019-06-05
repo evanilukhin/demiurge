@@ -17,7 +17,6 @@ export default function Post({post}) {
         {post.header}
       </div>
       <div className={style.line}/>
-      <SharePanel post={post}/>
       <ReactMarkdown source={post.mainPart} escapeHtml={false} renderers={{ code: Code }}/>
       <SharePanel post={post}/>
     </div>

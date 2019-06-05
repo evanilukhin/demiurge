@@ -30,6 +30,7 @@ defmodule DemiurgeWeb.Schema do
       arg(:short, :boolean)
       arg(:summary, :string)
       arg(:main_part, :string)
+      arg(:tags, list_of(:string))
       arg(:state, :string)
       resolve(&Resolvers.Content.create_post/3)
     end
@@ -39,6 +40,7 @@ defmodule DemiurgeWeb.Schema do
       arg(:id, non_null(:id))
       arg(:header, non_null(:string))
       arg(:head_image, :string)
+      arg(:tags, list_of(:string))
       arg(:short, :boolean)
       arg(:summary, :string)
       arg(:main_part, :string)
