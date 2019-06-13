@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from 'react-markdown';
 import TextareaAutosize from 'react-textarea-autosize';
 import TagsInput from 'react-tagsinput'
-import style from 'react-tagsinput/react-tagsinput.css'
+import style from './EditForm.less'
 import {boundMethod} from 'autobind-decorator'
 
 import Code from "./Code";
@@ -83,13 +83,19 @@ export default class EditForm extends React.Component {
           <input type="text" value={this.state.headImage} onChange={this.handleHeadImage} />
         </label>
         <TextareaAutosize value={this.state.summary} onChange={this.handleSummaryChange} style={{width: '100%'}} />
-        <input type="checkbox" checked={this.state.short} onChange={this.handleShortChange} style = {style}/>
+        <input type="checkbox" checked={this.state.short} onChange={this.handleShortChange}/>
         <TextareaAutosize
           value={this.state.mainPart}
           onChange={this.handleMainPartChange}
           style={{width: '100%'}}
           minRows={10}/>
-        <TagsInput value={this.state.tags} onChange={this.handleChangeTags} />
+        <TagsInput
+          value={this.state.tags}
+          onChange={this.handleChangeTags}
+          className={style.react_tagsinput}
+          tagProps={{className: style.react_tagsinput_tag, classNameRemove: style.react_tagsinput_remove}}
+          inputProps={{className: style.react_tagsinput_input}}
+        />
         <ReactMarkdown source={this.state.mainPart} escapeHtml={false} renderers={{ code: Code }}/>
         <button onClick={this.handleSave}>
           Save
