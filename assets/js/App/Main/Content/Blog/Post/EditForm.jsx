@@ -1,6 +1,8 @@
 import React from "react";
 import ReactMarkdown from 'react-markdown';
 import TextareaAutosize from 'react-textarea-autosize';
+import TagsInput from 'react-tagsinput'
+import style from './EditForm.less'
 import {boundMethod} from 'autobind-decorator'
 
 import Code from "./Code";
@@ -9,14 +11,15 @@ export default class EditForm extends React.Component {
   constructor(props) {
     super(props);
     if (props.post != null) {
-      let {id, summary, short, mainPart, header, headImage} = this.props.post;
+      let {id, summary, short, mainPart, header, headImage, tags} = this.props.post;
       this.state = {
         id: id,
         summary: summary,
         short: short,
         mainPart: mainPart,
         header: header,
-        headImage: headImage
+        headImage: headImage,
+        tags: tags
       };
     } else {
       this.state = {
@@ -24,11 +27,16 @@ export default class EditForm extends React.Component {
         short: true,
         mainPart: "",
         header:"",
-        headImage: ""
+        headImage: "",
+        tags: []
       };
     }
   }
 
+  @boundMethod
+  handleChangeTags(tags) {
+    this.setState({tags: tags})
+  }
   @boundMethod
   handleShortChange(event) {
     this.setState({short: event.target.checked});
@@ -81,6 +89,13 @@ export default class EditForm extends React.Component {
           onChange={this.handleMainPartChange}
           style={{width: '100%'}}
           minRows={10}/>
+        <TagsInput
+          value={this.state.tags}
+          onChange={this.handleChangeTags}
+          className={style.react_tagsinput}
+          tagProps={{className: style.react_tagsinput_tag, classNameRemove: style.react_tagsinput_remove}}
+          inputProps={{className: style.react_tagsinput_input}}
+        />
         <ReactMarkdown source={this.state.mainPart} escapeHtml={false} renderers={{ code: Code }}/>
         <button onClick={this.handleSave}>
           Save
