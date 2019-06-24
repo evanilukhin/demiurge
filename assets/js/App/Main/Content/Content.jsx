@@ -17,10 +17,10 @@ export default class Content extends React.Component {
     return(
       <Switch>
         <Route exact path="/" render={ () => <About aboutMe={aboutMe}/> }/>
-        <Route path="/blog"           component={Blog}/>
         <Route path="/posts/new"      component={NewPost}/>
         <Route path="/posts/:id/edit" component={EditPost}/>
         <Route path="/posts/:id"      component={ShowPost}/>
+        <Route path="/posts"         component={Blog}/>
       </Switch>
     );
   }

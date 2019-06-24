@@ -5,9 +5,10 @@ defmodule DemiurgeWeb.Schema do
   alias DemiurgeWeb.Resolvers
 
   query do
-    @desc "Get all posts"
+    @desc "Get posts"
     field :posts, list_of(:post_preview) do
-      resolve(&Resolvers.Content.list_posts/3)
+      arg(:tag, :string)
+      resolve(&Resolvers.Content.get_posts/3)
     end
 
     @desc "Get post"

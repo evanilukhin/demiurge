@@ -10,7 +10,7 @@ export default function Navbar() {
         <NavLink className={style.link} activeClassName={style.active_link} exact to="/">
           About me
         </NavLink>
-        <NavLink className={style.link} activeClassName={style.active_link} to="/blog">
+        <NavLink className={style.link} activeClassName={style.active_link} to="/posts">
           Blog
         </NavLink>
       </div>

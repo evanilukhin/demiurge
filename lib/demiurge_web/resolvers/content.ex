@@ -1,6 +1,6 @@
 defmodule DemiurgeWeb.Resolvers.Content do
-  def list_posts(_parent, _args, _resolution) do
-    {:ok, Demiurge.Post.Helpers.get_all_posts()}
+  def get_posts(_parent, args, _resolution) do
+    {:ok, Demiurge.Post.Helpers.get_posts(args)}
   end
 
   def get_post(_parent, args, _resolution) do
