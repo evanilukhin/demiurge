@@ -20,7 +20,7 @@ export default class Content extends React.Component {
         <Route path="/posts/new"      component={NewPost}/>
         <Route path="/posts/:id/edit" component={EditPost}/>
         <Route path="/posts/:id"      component={ShowPost}/>
-        <Route path="/posts"         component={Blog}/>
+        <Route path="/posts"          component={Blog}/>
       </Switch>
     );
   }
