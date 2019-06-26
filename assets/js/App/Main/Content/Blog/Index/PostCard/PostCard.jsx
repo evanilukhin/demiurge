@@ -12,13 +12,13 @@ export default function PostCard({post}) {
   }
   return(
     <div className={style.main}>
+      <TagsPanel tags = {post.tags}/>
       <div className={style.header}>
         {post.header}
       </div>
       <ReactMarkdown className={style.preview} source={post.summary} />
       {showMoreLink}
       <SharePanel post={post}/>
-      <TagsPanel tags = {post.tags}/>
     </div>
   );
 }

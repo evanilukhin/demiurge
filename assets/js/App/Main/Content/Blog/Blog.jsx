@@ -35,5 +35,4 @@ function parseSearchParams(search) {
   return({tag: tag});
 }
 
-
 export default Blog

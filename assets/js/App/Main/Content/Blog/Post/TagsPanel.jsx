@@ -7,9 +7,9 @@ export default function TagsPanel({tags}) {
     <div className={style.main}>
       { tags.map( tag =>
           <Link
-            className={style.link}
-            activeClassName={style.active_link}
+            className={style.tag}
             to={{patnname: "/posts", search: "?tag=" + tag}}
+            key={tag}
           >
             {"#" + tag}
           </Link>

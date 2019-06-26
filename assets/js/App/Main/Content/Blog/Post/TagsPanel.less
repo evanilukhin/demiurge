@@ -1,5 +1,5 @@
-.main {
-  margin: 10px 0;
+.main:not(:empty) {
+  margin: 0 0 10px 0;
   float: left;
   display: flex;
   width: 100%;
@@ -8,6 +8,11 @@
     padding-right: 5px;
   }
 }
+.main:empty {
+  display: none;
+}
 .tag {
-  
+  color: #3caf47;
+  font-family: serif;
+  text-decoration-line: none;
 }
