@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown';
 import SharePanel from '../../Post/SharePanel'
+import TagsPanel from  '../../Post/TagsPanel'
 import style from './PostCard.less'
 
 export default function PostCard({post}) {
@@ -11,6 +12,7 @@ export default function PostCard({post}) {
   }
   return(
     <div className={style.main}>
+      <TagsPanel tags = {post.tags}/>
       <div className={style.header}>
         {post.header}
       </div>

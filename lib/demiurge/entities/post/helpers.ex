@@ -30,7 +30,8 @@ defmodule Demiurge.Post.Helpers do
     end
   end
 
-  def get_all_posts() do
+  def get_posts(args) do
+    tag = args[:tag]
     query =
       from Post,
         select: [
@@ -43,6 +44,12 @@ defmodule Demiurge.Post.Helpers do
           :inserted_at
         ],
         order_by: [desc: :id]
+    query =
+      if is_nil(tag)  do
+        query
+      else
+        where(query, [post],  ^tag in post.tags)
+      end
     Repo.all(query)
   end
 
