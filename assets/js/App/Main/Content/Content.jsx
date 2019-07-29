@@ -16,7 +16,8 @@ export default class Content extends React.Component {
     const aboutMe = this.props.aboutMe;
     return(
       <Switch>
-        <Route exact path="/" render={ () => <About aboutMe={aboutMe}/> }/>
+        <Route exact path="/" render={Blog}/>
+        <Route path="/about"          component={ () => <About aboutMe={aboutMe}/> }/>
         <Route path="/posts/new"      component={NewPost}/>
         <Route path="/posts/:id/edit" component={EditPost}/>
         <Route path="/posts/:id"      component={ShowPost}/>

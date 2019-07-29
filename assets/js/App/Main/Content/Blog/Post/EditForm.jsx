@@ -74,6 +74,9 @@ export default class EditForm extends React.Component {
   render() {
     return(
       <div>
+        <button onClick={this.handleSave}>
+          Save
+        </button>
         <label>
           Header:
           <input type="text" value={this.state.header} onChange={this.handleHeader} />
@@ -96,10 +99,10 @@ export default class EditForm extends React.Component {
           tagProps={{className: style.react_tagsinput_tag, classNameRemove: style.react_tagsinput_remove}}
           inputProps={{className: style.react_tagsinput_input}}
         />
-        <ReactMarkdown source={this.state.mainPart} escapeHtml={false} renderers={{ code: Code }}/>
         <button onClick={this.handleSave}>
           Save
         </button>
+        <ReactMarkdown source={this.state.mainPart} escapeHtml={false} renderers={{ code: Code }}/>
       </div>
     );
   }
