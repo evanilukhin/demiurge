@@ -16,6 +16,7 @@
     "graphql-request": "^1.8.2",
     "graphql-tag": "^2.10.1",
     "jssha": "^2.3.1",
+    "lodash": ">=4.17.13",
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html",
     "raw-loader": "^2.0.0",
