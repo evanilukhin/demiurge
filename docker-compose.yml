@@ -9,6 +9,7 @@ services:
       PG_DATABASE: demiurge
       PG_HOST: db
       PG_PORT: 5432
+      # Variables for web application
       MIX_ENV: prod
       ADMIN_TOKEN: "${ADMIN_TOKEN}"
       HOST: "${HOST}"

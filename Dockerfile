@@ -1,33 +1,50 @@
-FROM elixir:1.8.1
-MAINTAINER Evan Ilukhin <evanilukhin@gmail.com>
+FROM elixir:1.9.0-alpine as build
 
-EXPOSE 5000
-ENV PORT=5000 MIX_ENV=prod
+# install build dependencies
+RUN apk add --update git build-base nodejs npm python
 
-RUN mix local.hex --force \
- && mix archive.install --force hex phx_new 1.4.0 \
- && apt-get update \
- && curl -sL https://deb.nodesource.com/setup_8.x | bash \
- && apt-get install -y apt-utils \
- && apt-get install -y nodejs \
- && apt-get install -y build-essential \
- && apt-get install -y inotify-tools \
- && apt-get install -y postgresql-client \
- && mix local.rebar --force
+# prepare build dir
+RUN mkdir /app
+WORKDIR /app
 
+# install hex + rebar
+RUN mix local.hex --force && \
+    mix local.rebar --force
+
+# set build ENV
+ENV MIX_ENV=prod
+
+# install mix dependencies
 COPY mix.exs mix.lock ./
-RUN mix do deps.get, deps.compile
+COPY config config
+RUN mix deps.get
+RUN mix deps.compile
 
-# Same with npm deps
-COPY assets/package.json assets/
-RUN cd assets && \
-    npm install
+# build assets
+COPY assets assets
+RUN cd assets && npm install && npm run deploy
+RUN mix phx.digest
 
-COPY . .
+# build project
+COPY priv priv
+COPY lib lib
+RUN mix compile
 
-RUN cd assets/ && \
-    npm install &&\
-    cd - && \
-    mix do compile, phx.digest
+# build release
+RUN mix release
 
-CMD ["bash", "./lib/demiurge/entrypoint.sh"]
+# prepare release image
+FROM alpine:3.9 AS app
+RUN apk add --update bash openssl postgresql-client
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY --from=build /app/_build/prod/rel/demiurge ./
+COPY --from=build /app/lib/demiurge/entrypoint.sh ./demiurge/entrypoint.sh
+RUN chown -R nobody: /app
+USER nobody
+
+ENV HOME=/app
+
+CMD ["bash", "./demiurge/entrypoint.sh"]

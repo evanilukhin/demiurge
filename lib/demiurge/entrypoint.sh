@@ -6,7 +6,6 @@ do
   sleep 2
 done
 
-mix ecto.create
-mix ecto.migrate
-
-exec mix phx.server
+bin/demiurge eval "Demiurge.Release.create_database"
+bin/demiurge eval "Demiurge.Release.migrate"
+bin/demiurge start
