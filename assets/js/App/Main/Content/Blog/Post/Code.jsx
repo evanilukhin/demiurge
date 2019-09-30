@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { coy } from "react-syntax-highlighter/dist/styles/prism";
+import { coy } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 class Code extends PureComponent {
   render() {
