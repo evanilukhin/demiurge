@@ -14,11 +14,13 @@ module.exports = (env, options) => ({
   },
   devtool: 'cheap-module-source-map',
   entry: {
-      './js/app.js': ['./js/app.js'].concat(glob.sync('./vendor/**/*.js'))
+    app: './js/app.js'
   },
   output: {
-    filename: 'app.js',
-    path: path.resolve(__dirname, '../priv/static/js')
+    filename: '[name].js',
+    chunkFilename: '[name].js',
+    path: path.resolve(__dirname, '../priv/static/js'),
+    publicPath: '/js/'
   },
   module: {
     rules: [

@@ -1,11 +1,10 @@
-import React from "react";
+import React, {Suspense} from "react";
 import ReactMarkdown from 'react-markdown';
 import TextareaAutosize from 'react-textarea-autosize';
 import TagsInput from 'react-tagsinput'
 import style from './EditForm.less'
 import {boundMethod} from 'autobind-decorator'
-
-import Code from "./Code";
+const Code = React.lazy(() => import(/* webpackChunkName: "/js/Code" */ './Code'));
 
 export default class EditForm extends React.Component {
   constructor(props) {
@@ -102,7 +101,9 @@ export default class EditForm extends React.Component {
         <button onClick={this.handleSave}>
           Save
         </button>
-        <ReactMarkdown source={this.state.mainPart} escapeHtml={false} renderers={{ code: Code }}/>
+        <Suspense fallback={ <div>Loading...</div> }>
+          <ReactMarkdown source={this.state.mainPart} escapeHtml={false} renderers={{ code: Code }}/>
+        </Suspense>
       </div>
     );
   }
