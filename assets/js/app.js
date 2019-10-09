@@ -8,5 +8,5 @@ import "common_css/app.less";
 
 const domContainer = document.querySelector('#root');
 
-Modal.setAppElement(domContainer)
+Modal.setAppElement(domContainer);
 ReactDOM.render((<App />), domContainer);
