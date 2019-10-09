@@ -4,7 +4,7 @@ defmodule Demiurge.Mixfile do
   def project do
     [
       app: :demiurge,
-      version: "0.33.7",
+      version: "0.33.8",
       elixir: "~> 1.9.0",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
