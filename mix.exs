@@ -5,7 +5,7 @@ defmodule Demiurge.Mixfile do
     [
       app: :demiurge,
       version: "0.33.8",
-      elixir: "~> 1.9.0",
+      elixir: "~> 1.10.4",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -33,8 +33,7 @@ defmodule Demiurge.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.4.0"},
-      {:phoenix_pubsub, "~> 1.0"},
+      {:phoenix, "~> 1.5.5"},
       {:ecto_sql, "~> 3.1.6"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_ecto, "~> 4.0"},
