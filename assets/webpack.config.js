@@ -1,81 +1,68 @@
+// webpack config
 const path = require('path');
-const glob = require('glob');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackBar = require('webpackbar');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
-module.exports = (env, options) => ({
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({ cache: true, parallel: true, sourceMap: true }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
-  },
-  devtool: 'cheap-module-source-map',
+module.exports = (env = {}) => ({
   entry: {
-    app: './js/app.js'
+    app: './js/app.ts'
   },
+  devtool: 'eval-source-map',
   output: {
-    filename: '[name].js',
-    chunkFilename: '[name].js',
-    path: path.resolve(__dirname, '../priv/static/js'),
-    publicPath: '/js/'
+    filename: 'app.js',
+    path: path.resolve(__dirname, '../priv/static/js')
   },
   module: {
     rules: [
       {
-         test: /\.mjs$/,
-         include: /node_modules/,
-         type: 'javascript/auto'
+        test: /\.vue$/,
+        use: 'vue-loader'
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-              presets: ['@babel/react', '@babel/env']
+        loader: "babel-loader"
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader",
+            options: { appendTsSuffixTo: [/\.vue$/] }
           }
-        }
+        ]
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
-      },
-      {
-        test: /\.less$/,
-        use:[
+        exclude: /node_modules/,
+        use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader',
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              sourceMap: true,
-              modules: true,
-              localIdentName: "[local]___[hash:base64:5]"
+              importLoaders: 1,
             }
           },
           {
-            loader: "less-loader"
+            loader: 'postcss-loader'
           }
-        ] // compiles Less to CSS
-      }
-    ]
+        ]
+      },
+    ],
   },
-
   resolve: {
-    mainFields: ['browser', 'main', 'module'],
+    extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
-      Components: path.resolve(__dirname, 'js/components'),
-      common_css: path.resolve(__dirname, 'css')
-    },
-    extensions: ['*', '.js', '.jsx', '.mjs', '.gql', '.graphql','.less']
+      'vue': '@vue/runtime-dom'
+    }
   },
-
   plugins: [
-    new MiniCssExtractPlugin({ filename: '../css/app.css' }),
-    new CopyWebpackPlugin([{ from: 'static/', to: '../' }])
+    new CleanWebpackPlugin(),
+    new WebpackBar(),
+    new VueLoaderPlugin(),
   ]
 });
