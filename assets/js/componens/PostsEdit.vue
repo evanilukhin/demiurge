@@ -1,11 +1,11 @@
 <template>
 <div>
-    About me
+    Post Editor
 </div>
 </template>
 
 <script lang="ts">
 export default {
-    name: "About"
+    name: "PostsEdit"
 }
 </script>

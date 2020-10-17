@@ -25,8 +25,6 @@ defmodule DemiurgeWeb.Router do
   scope "/", DemiurgeWeb do
     # Use the default browser stack
     pipe_through :browser
-    get "/posts/new", PageController, :index
-    get "/posts/:id", PostController, :show
     get "/*path", PageController, :index
   end
 end

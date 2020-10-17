@@ -3,6 +3,7 @@ const path = require('path');
 const WebpackBar = require('webpackbar');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env = {}) => ({
   entry: {
@@ -57,12 +58,14 @@ module.exports = (env = {}) => ({
   resolve: {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
-      'vue': '@vue/runtime-dom'
+      'vue': '@vue/runtime-dom',
+      '@': path.resolve(__dirname),
     }
   },
   plugins: [
     new CleanWebpackPlugin(),
     new WebpackBar(),
     new VueLoaderPlugin(),
+    new CopyWebpackPlugin({ patterns: [{ from: 'static/', to: '../' }]})
   ]
 });

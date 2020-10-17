@@ -1,11 +1,11 @@
 <template>
 <div>
-  Content
+    Posts Index
 </div>
 </template>
 
 <script lang="ts">
-  export default {
-  name: "Page"
+export default {
+    name: "PostsIndex"
 }
 </script>

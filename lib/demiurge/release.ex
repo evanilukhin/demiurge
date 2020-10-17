@@ -6,7 +6,7 @@ defmodule Demiurge.Release do
   def create_database do
     for repo <- repos() do
       case Ecto.Adapters.Postgres.storage_up(repo.config) do
-        {:ok, _, _} -> Logger.info("Database successfully created")
+        :ok -> Logger.info("Database successfully created")
         {:error, :already_up} -> Logger.info("Database already up")
         error -> Logger.error("Unknown error #{inspect(error)}")
       end

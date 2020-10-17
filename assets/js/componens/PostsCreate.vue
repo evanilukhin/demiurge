@@ -1,11 +1,15 @@
 <template>
 <div>
-    About me
+    Posts Create
 </div>
 </template>
 
 <script lang="ts">
 export default {
-    name: "About"
+    name: "PostsCreate"
 }
 </script>
+
+<style scoped>
+
+</style>
