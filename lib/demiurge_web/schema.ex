@@ -8,6 +8,8 @@ defmodule DemiurgeWeb.Schema do
     @desc "Get posts"
     field :posts, list_of(:post_preview) do
       arg(:tag, :string)
+      arg(:limit, :integer)
+      arg(:offset, :integer)
       resolve(&Resolvers.Content.get_posts/3)
     end
 

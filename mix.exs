@@ -45,7 +45,8 @@ defmodule Demiurge.Mixfile do
       {:absinthe, "~> 1.4"},
       {:absinthe_plug, "~> 1.4"},
       {:dataloader, "~> 1.0.0"},
-      {:jason, "~> 1.0"}
+      {:jason, "~> 1.0"},
+      {:cors_plug, "~> 2.0"}
     ]
   end
 

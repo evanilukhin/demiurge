@@ -1,6 +1,7 @@
 defmodule DemiurgeWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :demiurge
 
+
   socket "/socket", DemiurgeWeb.UserSocket, websocket: true
 
   # Serve at "/" the static files from "priv/static" directory.
@@ -40,6 +41,7 @@ defmodule DemiurgeWeb.Endpoint do
     key: "_demiurge_key",
     signing_salt: "nqql1dk2"
 
+  plug CORSPlug
   plug DemiurgeWeb.Router
 
   @doc """

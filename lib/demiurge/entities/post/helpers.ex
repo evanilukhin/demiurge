@@ -32,6 +32,8 @@ defmodule Demiurge.Post.Helpers do
 
   def get_posts(args) do
     tag = args[:tag]
+    limit_value = args[:limit]
+    offset_value = args[:offset]
     query =
       from Post,
         select: [
@@ -44,12 +46,10 @@ defmodule Demiurge.Post.Helpers do
           :inserted_at
         ],
         order_by: [desc: :id]
-    query =
-      if is_nil(tag)  do
-        query
-      else
-        where(query, [post],  ^tag in post.tags)
-      end
+
+    query = if(!is_nil(tag),          do: where(query, [post], ^tag in post.tags), else: query)
+    query = if(!is_nil(limit_value),  do: limit(query, ^limit_value), else: query)
+    query = if(!is_nil(offset_value), do: offset(query, ^offset_value), else: query)
     Repo.all(query)
   end
 

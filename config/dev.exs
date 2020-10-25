@@ -50,6 +50,11 @@ config :demiurge, DemiurgeWeb.Endpoint,
     ]
   ]
 
+config :cors_plug,
+       origin: ["http://0.0.0.0:4000", "http://localhost:4000"],
+       max_age: 86400,
+       methods: ["GET", "POST"]
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 

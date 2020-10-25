@@ -2,7 +2,6 @@ defmodule DemiurgeWeb.Plugs.Authentification do
   @behaviour Plug
   require Logger
   import Plug.Conn
-  require IEx
 
   def init(opts), do: opts
 
