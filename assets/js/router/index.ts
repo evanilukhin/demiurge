@@ -17,14 +17,16 @@ const routes: Array<RouteRecordRaw>  = [
         component: PostsCreate,
     },
     {
-        path: "/posts/:id",
+        path: "/posts/:post_id",
         name: "PostsShow",
         component: PostsShow,
+        props: true
     },
     {
-        path: "/posts/:id/edit",
+        path: "/posts/:post_id/edit",
         name: "PostsEdit",
-        component: PostsEdit
+        component: PostsEdit,
+        props: true
     },
     {
         path: "/about",

@@ -43,10 +43,13 @@
     "core-js": "^3.6.5",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.11.0",
+    "install": "^0.13.0",
+    "npm": "^7.0.6",
     "tailwindcss": "^1.8.10",
     "vue": "^3.0.0-0",
     "vue-router": "^4.0.0-0",
     "vue-template-compiler": "^2.6.12",
+    "vue3-markdown-it": "^1.0.5",
     "vuex": "^4.0.0-0"
   }
 }

@@ -12,18 +12,13 @@
 </template>
 
 <script lang="ts">
-import {
-    useQuery
-} from '@vue/apollo-composable'
-import {
-    watch
-} from 'vue'
-import getPosts from '../graphql/getPosts.query.gql'
-
+import { useQuery } from '@vue/apollo-composable'
+import { watch } from 'vue'
+import getPosts from '../graphql/getPosts.query.graphql'
 
 export default {
     setup() {
-      const { result, fetchMore } = useQuery(getPosts, {limit: 3, offset: 0})
+      const { result, fetchMore } = useQuery(getPosts, {limit: 5, offset: 0})
       console.log(result)
       function loadMore () {
         fetchMore({

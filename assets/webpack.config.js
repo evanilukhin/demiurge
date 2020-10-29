@@ -61,7 +61,7 @@ module.exports = (env = {}) => ({
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js', '.vue', '.json'],
+    extensions: ['.ts', '.js', '.vue', '.json', '.graphql'],
     alias: {
       'vue': '@vue/runtime-dom',
       '@': path.resolve(__dirname),

@@ -5,7 +5,10 @@ import router from "./router";
 
 import {ApolloClient, createHttpLink, InMemoryCache} from '@apollo/client/core'
 import {DefaultApolloClient} from '@vue/apollo-composable'
+import VueMarkdownIt from 'vue3-markdown-it';
+
 import { offsetLimitPagination } from "@apollo/client/utilities";
+
 // HTTP connection to the API
 const httpLink = createHttpLink({
     // You should use an absolute URL here
@@ -35,4 +38,4 @@ createApp(
             return h(App)
         }
     }
-).use(router).mount('#app');
+).use(router).use(VueMarkdownIt).mount('#app');
