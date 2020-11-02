@@ -2,8 +2,8 @@
 <div>
     <div>
         <ul>
-            <li v-for="post of result.posts" :key="post.id">
-                {{ post.id }} {{ post.summary }}
+            <li v-for="post of this?.result?.posts" :key="post.id">
+                {{ post.id + " " +post.summary }}
             </li>
         </ul>
     </div>
@@ -14,12 +14,11 @@
 <script lang="ts">
 import { useQuery } from '@vue/apollo-composable'
 import { watch } from 'vue'
-import getPosts from '../graphql/getPosts.query.graphql'
+import getPosts from "@/js/graphql/getPosts"
 
 export default {
     setup() {
       const { result, fetchMore } = useQuery(getPosts, {limit: 5, offset: 0})
-      console.log(result)
       function loadMore () {
         fetchMore({
           variables: {
@@ -29,6 +28,6 @@ export default {
       }
       return { result, loadMore }
     },
-    name: "PostsIndex"
+  name: "PostsIndex"
 }
 </script>

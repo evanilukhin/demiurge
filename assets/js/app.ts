@@ -3,12 +3,10 @@ import {createApp, provide, h} from 'vue';
 import App from "./App.vue";
 import router from "./router";
 
-import {ApolloClient, createHttpLink, InMemoryCache} from '@apollo/client/core'
-import {DefaultApolloClient} from '@vue/apollo-composable'
-import VueMarkdownIt from 'vue3-markdown-it';
-
-import { offsetLimitPagination } from "@apollo/client/utilities";
-
+import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
+import { DefaultApolloClient } from '@vue/apollo-composable'
+import { offsetLimitPagination } from '@apollo/client/utilities';
+import { VueMarkdownIt } from 'vue3-markdown-it';
 // HTTP connection to the API
 const httpLink = createHttpLink({
     // You should use an absolute URL here

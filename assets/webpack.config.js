@@ -4,6 +4,7 @@ const WebpackBar = require('webpackbar');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env = {}) => ({
   entry: {
@@ -71,6 +72,7 @@ module.exports = (env = {}) => ({
     new CleanWebpackPlugin(),
     new WebpackBar(),
     new VueLoaderPlugin(),
-    new CopyWebpackPlugin({ patterns: [{ from: 'static/', to: '../' }]})
+    new CopyWebpackPlugin({ patterns: [{ from: 'static/', to: '../' }]}),
+    new BundleAnalyzerPlugin()
   ]
 });
