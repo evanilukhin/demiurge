@@ -1,6 +1,5 @@
 <template>
 <div class="prose prose-lg max-w-3/4 self-center">
-  <h1 class="text-2xl">{{result?.post?.header}}</h1>
   <markdown-renderer :source='result?.post?.mainPart' />
 </div>
 </template>
@@ -9,7 +8,6 @@
 import { useQuery } from '@vue/apollo-composable'
 import getPost from "@/js/graphql/getPost"
 import MarkdownRenderer from "@/js/componens/MarkdownRenderer.vue";
-
 
 export default {
   setup(props) {

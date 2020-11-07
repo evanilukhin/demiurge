@@ -3,7 +3,7 @@ module.exports = {
         // removeDeprecatedGapUtilities: true,
         // purgeLayersByDefault: true,
     },
-    purge: [],
+    purge: { enabled: true, content: ['./js/**/*.vue','./js/**/*.ts'] },
     theme: {
         extend: {
             maxWidth: {
