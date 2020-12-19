@@ -5,7 +5,7 @@ defmodule Demiurge.Mixfile do
     [
       app: :demiurge,
       version: "0.33.8",
-      elixir: "~> 1.10.4",
+      elixir: "~> 1.11.2",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,

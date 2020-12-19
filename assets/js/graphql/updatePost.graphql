@@ -1,0 +1,11 @@
+mutation updatePost($id: Int!, $mainPart: String!, $header: String!, $headImage: String!, $short:Boolean!, $summary: String!, $tags: [String!]) {
+    updatePost(id: $id, header: $header, mainPart: $mainPart, summary: $summary, short: $short, headImage: $headImage, tags: $tags) {
+        id
+        header
+        headImage
+        tags
+        short
+        summary
+        mainPart
+    }
+}
