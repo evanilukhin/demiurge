@@ -1,6 +1,0 @@
-query getPosts($offset: Int, $limit: Int) {
-    posts(offset: $offset, limit: $limit){
-        id
-        summary
-    }
-}
