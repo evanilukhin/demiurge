@@ -51,7 +51,7 @@ config :demiurge, DemiurgeWeb.Endpoint,
   ]
 
 config :cors_plug,
-       origin: ["http://0.0.0.0:4000", "http://localhost:4000"],
+       origin: ["http://0.0.0.0:4200", "http://localhost:4200"],
        max_age: 86400,
        methods: ["GET", "POST"]
 
