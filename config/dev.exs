@@ -7,7 +7,7 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
 config :demiurge,
-  admin_token: "fb28f7d1e2813e6ae7f7082f460ea4a87bb813619a5bc278cd703dda3a22a4869ff7cbbe74e3bc336f36ea55e723a627008dcb1971be6f39f1a892a85a39e3f0"
+  admin_token: System.get_env("ADMIN_TOKEN")
 config :demiurge, DemiurgeWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,

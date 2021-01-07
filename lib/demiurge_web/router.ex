@@ -12,5 +12,7 @@ defmodule DemiurgeWeb.Router do
     forward "/graphql", Absinthe.Plug.GraphiQL,
       schema: DemiurgeWeb.Schema,
       json_codec: Jason
+
+    post "/authenticate", DemiurgeWeb.AuthController, :authenticate
   end
 end

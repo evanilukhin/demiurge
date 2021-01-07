@@ -14,7 +14,7 @@ defmodule DemiurgeWeb.Plugs.Authentification do
   Return the current user context based on the authorization header
   """
   def build_context(conn) do
-    with ["Bearer " <> token] <- get_req_header(conn, "authorization"),
+    with ["Bearer " <> token] <- get_req_header(conn, "Auth-Token"),
     {:ok, current_user} <- authorize(token) do
       %{current_user: current_user}
     else
@@ -26,7 +26,7 @@ defmodule DemiurgeWeb.Plugs.Authentification do
     if token == admin_token() do
       {:ok, :admin}
     else
-      message = "invalid authorization token | " <> token
+      message = "invalid authorization token"
       Logger.error(message)
       {:error, message: message}
     end

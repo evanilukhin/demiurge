@@ -25,6 +25,16 @@ defmodule DemiurgeWeb do
     end
   end
 
+  def controller do
+    quote do
+      use Phoenix.Controller, namespace: DemiurgeWeb
+      import Plug.Conn
+      import DemiurgeWeb.Gettext
+
+      alias DemiurgeWeb.Router.Helpers, as: Routes
+    end
+  end
+
   @doc """
   When used, dispatch to the appropriate controller/view/etc.
   """

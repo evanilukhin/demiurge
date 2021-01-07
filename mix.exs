@@ -33,7 +33,7 @@ defmodule Demiurge.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.5.5"},
+      {:phoenix, "~> 1.5.7"},
       {:ecto_sql, "~> 3.1.6"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_ecto, "~> 4.0"},
@@ -46,7 +46,8 @@ defmodule Demiurge.Mixfile do
       {:absinthe_plug, "~> 1.4"},
       {:dataloader, "~> 1.0.0"},
       {:jason, "~> 1.0"},
-      {:cors_plug, "~> 2.0"}
+      {:cors_plug, "~> 2.0"},
+      {:argon2_elixir, "~> 2.0"}
     ]
   end
 
