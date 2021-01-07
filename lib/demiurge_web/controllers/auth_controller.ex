@@ -6,7 +6,7 @@ defmodule DemiurgeWeb.AuthController do
     hash = Application.get_env(:demiurge, :admin_token)
     Logger.info(hash)
     if Argon2.verify_pass(password, hash) do
-      conn = put_resp_header(conn, "Auth-Token", "Bearer: #{hash}")
+      conn = put_resp_header(conn, "Auth-Token", "Bearer #{hash}")
       send_resp(conn, :ok, "")
     else
       send_resp(conn, :unauthorized, "")

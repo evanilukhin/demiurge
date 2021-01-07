@@ -3,6 +3,7 @@ defmodule DemiurgeWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug CORSPlug
     plug DemiurgeWeb.Plugs.Authentification
   end
 
