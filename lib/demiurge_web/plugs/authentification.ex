@@ -14,7 +14,7 @@ defmodule DemiurgeWeb.Plugs.Authentification do
   Return the current user context based on the authorization header
   """
   def build_context(conn) do
-    with ["Bearer " <> token] <- get_req_header(conn, "Auth-Token"),
+    with [token] <- get_req_header(conn, "auth-token"),
     {:ok, current_user} <- authorize(token) do
       %{current_user: current_user}
     else

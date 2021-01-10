@@ -1,5 +1,4 @@
 use Mix.Config
-
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
@@ -45,6 +44,20 @@ config :cors_plug,
        origin: ["http://0.0.0.0:4200", "http://localhost:4200"],
        max_age: 86400,
        methods: ["GET", "POST"],
+       headers: [
+         "Auth-Token",
+         "Content-Type",
+         "Accept",
+         "Origin",
+         "User-Agent",
+         "DNT",
+         "Cache-Control",
+         "X-Mx-ReqToken",
+         "Keep-Alive",
+         "X-Requested-With",
+         "If-Modified-Since",
+         "X-CSRF-Token"
+       ],
        expose: ["Auth-Token"]
 
 # Do not include metadata nor timestamps in development logs
